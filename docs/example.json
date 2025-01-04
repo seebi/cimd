@@ -1,0 +1,20 @@
+{
+    "items": {
+        "coverage": {
+            "value": "87%",
+            "comment": "'value' is the only mandatory key of a metadata item."
+        },
+        "jobs": {
+            "value": "15",
+            "label": "Jobs",
+            "description": "Number of overall jobs executed in the pipeline.",
+            "comment": "'label' and 'description' can be used to enhance the UI."
+        },
+        "security_issues": {
+            "value": "4",
+            "image": "https://img.shields.io/badge/security%20issues-4-red",
+            "link": "https://example.org/security_issues",
+            "comment": "We all love badges - and clickable badges are even better."
+        }
+    }
+}

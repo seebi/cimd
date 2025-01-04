@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier
+_commit: v7.0.0
+_src_path: gh:eccenca/cmem-plugin-template
+author_mail: mail@sebastian.tramp.name
+author_name: Sebastian Tramp
+github_page: https://github.com/seebi/cimd
+project_description: Collect and share metadata of CI/CD processes.
+project_slug: cimd
+project_type: generic
+pypi: true
+

@@ -1,0 +1,36 @@
+{
+    "$id": "https://gitlab.com/seebi/gitlab-pipeline-metadata/-/raw/main/schema/schema.json",
+    "title": "__metadata__.json",
+    "description": "A pipeline metadata document as described here: https://gitlab.com/seebi/gitlab-pipeline-metadata",
+
+    "$schema": "http://json-schema.org/draft-07/schema#",
+
+    "type": "object",
+    "properties": {
+        "items": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-z_-]+$": {
+                    "type": "object",
+                    "required": ["value"],
+                    "properties": {
+                        "value":       { "$ref": "#/definitions/non-empty-string" },
+                        "label":       { "$ref": "#/definitions/non-empty-string" },
+                        "description": { "$ref": "#/definitions/non-empty-string" },
+                        "comment":     { "$ref": "#/definitions/non-empty-string" },
+                        "image":       { "$ref": "#/definitions/https-url" },
+                        "link":        { "$ref": "#/definitions/https-url" }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "https-url":         { "type": "string", "pattern": "^https://.*" },
+        "non-empty-string":  { "type": "string", "minLength": 1 }
+    }
+}
+

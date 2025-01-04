@@ -1,0 +1,37 @@
+---
+
+version: '3'
+
+tasks:
+
+  default:
+    summary: |
+      Just a list of documented tasks.
+    silent: true
+    cmds:
+      - task --list
+
+  validate:
+    desc: Validate example and failing test documents
+    deps: [validate-non-valid-files, validate-valid-files]
+
+  validate-non-valid-files:
+    desc: Validates all files which SHOULD fail
+    sources:
+      - fails/*.json
+    generates:
+      - report.txt
+    cmds:
+      - for: sources
+        cmd: ajv validate -s schema.json -d "{{.ITEM}}" || exit 0 && exit 1
+
+  validate-valid-files:
+    desc: Validates all files which SHOULD NOT fail
+    sources:
+      - ../docs/*.json
+    generates:
+      - report.txt
+    cmds:
+      - for: sources
+        cmd: ajv validate -s schema.json -d "{{.ITEM}}"
+
