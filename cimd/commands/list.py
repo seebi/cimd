@@ -6,10 +6,20 @@ from cimd.classes import context
 
 
 @click.command(name="list")
+@click.option(
+    "--keys-only",
+    is_flag=True,
+    help="Show only item keys.",
+)
 @click.pass_obj
-def list_command(app: context.ApplicationContext) -> None:
+def list_command(app: context.ApplicationContext, keys_only: bool) -> None:
     """List metadata items."""
     table = []
+    if keys_only:
+        for key in app.file.items:
+            app.echo_info(key)
+        return
+
     for key, item in app.file.items.items():
         row = [key, item.value]
         addons = ""
