@@ -39,7 +39,7 @@ class AnnotatedResult:
             self.exception = result.exception
 
 
-def _run(command: tuple[str, ...]) -> AnnotatedResult:
+def _run(command: tuple[str, ...] | list[str]) -> AnnotatedResult:
     """Wrap the CliRunner"""
     t_start = time.time()
     result = CLI_RUNNER.invoke(cli, command)
@@ -51,7 +51,7 @@ def _run(command: tuple[str, ...]) -> AnnotatedResult:
     return annotated_result
 
 
-def run(command: tuple[str, ...]) -> AnnotatedResult:
+def run(command: tuple[str, ...] | list[str]) -> AnnotatedResult:
     """Wrap the CliRunner, asserting exit 0"""
     result = _run(command)
     command_string = " ".join([str(_) for _ in command])
@@ -63,12 +63,12 @@ def run(command: tuple[str, ...]) -> AnnotatedResult:
     return result
 
 
-def run_without_assertion(command: tuple[str, ...]) -> AnnotatedResult:
+def run_without_assertion(command: tuple[str, ...] | list[str]) -> AnnotatedResult:
     """Wrap the CliRunner but does not assert anything"""
     return _run(command=command)
 
 
-def run_asserting_error(command: tuple[str, ...], match: str) -> AnnotatedResult:
+def run_asserting_error(command: tuple[str, ...] | list[str], match: str) -> AnnotatedResult:
     """Wrap the CliRunner, asserting exit 1 or more"""
     result = _run(command=command)
     assert result.exit_code >= 1, f"exit code should be 1 or more (but was {result.exit_code})"

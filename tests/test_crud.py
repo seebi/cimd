@@ -93,7 +93,7 @@ def test_table_list(tmp_path: Path, test_data: TestData) -> None:
             _.link1,
         )
     )
-    run_table = run(command=("list"))
+    run_table = run(command=["list"])
     assert _.key1 in run_table.stdout
     assert _.value1 in run_table.stdout
     assert _.label1 in run_table.stdout
