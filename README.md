@@ -17,7 +17,7 @@ Collect and share metadata of CI/CD processes.
     * [Content](#content)
     * [Schema](#schema)
 * [Frontend](#frontend)
-* [Backend (data production)](#backend-data-production)
+* [Command Line Tool](#command-line-tool)
 
 <!-- vim-markdown-toc -->
 
@@ -118,14 +118,20 @@ Ideas beyond the initial prototype:
 - header allows for sorting
 - header allows for filtering
 
-## Backend (data production)
+## Command Line Tool
 
 The backend part of this project runs in the metadata CI job and provides and easy way to produce a `__metadata__.json` with the items wanted.
 
-Ideas beyond the initial prototype:
+``` shell
+$ pipx install cimd
+$ ciwd add coverage "85%" --label "Code Coverage"
+ADD: coverage (85%)
 
-- create metadata items based on log output (similar to coverage expressions)
-- create metadata items by fetching job-based `__metadata__.json` documents (and merge)
+$ cimd list
+Key       Value    Additional Fields
+--------  -------  --------------------
+coverage  85%      label: Code Coverage
+```
 
 
 [poetry-link]: https://python-poetry.org/
