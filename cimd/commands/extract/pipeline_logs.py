@@ -1,4 +1,4 @@
-"""scratch pipeline-logs command"""
+"""extract pipeline-logs command"""
 
 import os
 import re
