@@ -54,6 +54,10 @@ jobs:
         env:
           CMEM_BASE_URI: ${{ secrets.CMEM_BASE_URI }}
           OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
+          TEST_EXTRACT_PIPELINE_LOG_URL: ${{ secrets.TEST_EXTRACT_PIPELINE_LOG_URL }}
+          TEST_EXTRACT_PIPELINE_LOG_PAT: ${{ secrets.TEST_EXTRACT_PIPELINE_LOG_PAT }}
+          TEST_EXTRACT_PIPELINE_LOG_PROJECT: ${{ secrets.TEST_EXTRACT_PIPELINE_LOG_PROJECT }}
+          TEST_EXTRACT_PIPELINE_LOG_PIPELINE: ${{ secrets.TEST_EXTRACT_PIPELINE_LOG_PIPELINE }}
         run: |
           task check:pytest
 
