@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Added
+
+- extract command: trivy-scan
+  - Extract metadata from a trivy scan JSON output file
+- api to prepare shields.io image links
+
 ### Changed
 
 - rename scratch group to extract

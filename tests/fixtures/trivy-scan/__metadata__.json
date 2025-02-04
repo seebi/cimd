@@ -1,0 +1,34 @@
+{
+  "items": {
+    "trivy-scan-low": {
+      "value": "82",
+      "label": "LOW",
+      "description": "Count of found vulnerabilities with severity 'LOW'",
+      "image": "https://img.shields.io/badge/LOW-82-green?logo=trivy"
+    },
+    "trivy-scan-high": {
+      "value": "10",
+      "label": "HIGH",
+      "description": "Count of found vulnerabilities with severity 'HIGH'",
+      "image": "https://img.shields.io/badge/HIGH-10-orange?logo=trivy"
+    },
+    "trivy-scan-medium": {
+      "value": "29",
+      "label": "MEDIUM",
+      "description": "Count of found vulnerabilities with severity 'MEDIUM'",
+      "image": "https://img.shields.io/badge/MEDIUM-29-yellow?logo=trivy"
+    },
+    "trivy-scan-critical": {
+      "value": "2",
+      "label": "CRITICAL",
+      "description": "Count of found vulnerabilities with severity 'CRITICAL'",
+      "image": "https://img.shields.io/badge/CRITICAL-2-red?logo=trivy"
+    },
+    "trivy-scan-unknown": {
+      "value": "1",
+      "label": "UNKNOWN",
+      "description": "Count of found vulnerabilities with severity 'UNKNOWN'",
+      "image": "https://img.shields.io/badge/UNKNOWN-1-lightgray?logo=trivy"
+    }
+  }
+}

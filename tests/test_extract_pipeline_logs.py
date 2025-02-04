@@ -12,7 +12,7 @@ from tests import run, run_asserting_error
 
 
 @dataclass
-class TestData:
+class FixtureData:
     """Test Data Fixture"""
 
     url: str
@@ -28,7 +28,7 @@ class TestData:
 
 
 @pytest.fixture
-def test_data(tmp_path: Path) -> Generator[TestData, Any, None]:
+def fixture_data(tmp_path: Path) -> Generator[FixtureData, Any, None]:
     """Provide TestSetup"""
     current_directory = Path.cwd()
     os.chdir(tmp_path)
@@ -40,7 +40,7 @@ def test_data(tmp_path: Path) -> Generator[TestData, Any, None]:
         pytest.skip("Need TEST_EXTRACT_PIPELINE_LOG_PROJECT environment variable to run this test")
     if (pipeline := os.environ.get("TEST_EXTRACT_PIPELINE_LOG_PIPELINE", "")) == "":
         pytest.skip("Need TEST_EXTRACT_PIPELINE_LOG_PIPELINE environment variable to run this test")
-    yield TestData(
+    yield FixtureData(
         url=url,
         pat=pat,
         project=project,
@@ -52,9 +52,9 @@ def test_data(tmp_path: Path) -> Generator[TestData, Any, None]:
     os.chdir(current_directory)
 
 
-def test_extract(test_data: TestData) -> None:
+def test_extract(fixture_data: FixtureData) -> None:
     """Test extract pipeline-logs command"""
-    _ = test_data
+    _ = fixture_data
     assert run(command=("list", "--keys-only")).line_count == 0
     pipeline_command = _.command.copy()
     pipeline_command.extend(["--pipeline", _.pipeline])
@@ -64,9 +64,9 @@ def test_extract(test_data: TestData) -> None:
     assert run(command=("get", _.key_2)).lines[0] == _.value_2
 
 
-def test_extract_fail(test_data: TestData) -> None:
+def test_extract_fail(fixture_data: FixtureData) -> None:
     """Test failing pipeline-logs command"""
-    _ = test_data
+    _ = fixture_data
     assert run(command=("list", "--keys-only")).line_count == 0
     pipeline_command = _.command.copy()
     pipeline_command.extend(["--pipeline", "123123123123"])

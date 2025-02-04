@@ -4,7 +4,7 @@ import click
 
 from cimd.classes import context
 from cimd.commands import add, delete, get, list
-from cimd.commands.extract import pipeline_logs
+from cimd.commands.extract import pipeline_logs, trivy_scans
 
 
 @click.group(context_settings={"auto_envvar_prefix": "CIMD", "help_option_names": ["-h", "--help"]})
@@ -28,10 +28,11 @@ def cli(ctx: click.core.Context, file: str, debug: bool) -> None:
 
 @click.group(name="extract")
 def extract_group() -> click.Group:  # type: ignore[empty-body]
-    """Scape and collect metadata from sources."""
+    """Scrape and collect metadata from sources."""
 
 
 extract_group.add_command(pipeline_logs.pipeline_logs_command)
+extract_group.add_command(trivy_scans.trivy_scan_command)
 
 cli.add_command(add.add_command)
 cli.add_command(delete.delete_command)
