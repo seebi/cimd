@@ -21,14 +21,14 @@ class TrivyScanResults(BaseModel):
     """Scan Results of a Trivy Scan"""
 
     target: str = Field(alias="Target")
-    vulnerabilities: list[Vulnerability] = Field(alias="Vulnerabilities")
+    vulnerabilities: list[Vulnerability] = Field(alias="Vulnerabilities", default_factory=list)
 
 
 class TrivyScan(BaseModel):
     """Trivy Scan"""
 
     schema_version: int = Field(alias="SchemaVersion")
-    results: list[TrivyScanResults] = Field(alias="Results")
+    results: list[TrivyScanResults] = Field(alias="Results", default_factory=list)
 
 
 def count_json_file(json_file: str) -> dict[str, int]:
