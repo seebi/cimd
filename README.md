@@ -4,22 +4,14 @@ Collect and share metadata of CI/CD processes.
 
 **cimd** is an acronym for **C**ontinuous **I**ntegration **M**eta **D**ata.
 
-[![workflow](https://github.com/seebi/cimd/actions/workflows/check.yml/badge.svg)](https://github.com/seebi/cimd/actions) [![pypi version](https://img.shields.io/pypi/v/cimd)](https://pypi.org/project/cimd) [![license](https://img.shields.io/pypi/l/cimd)](https://pypi.org/project/cimd)
-[![poetry][poetry-shield]][poetry-link] [![ruff][ruff-shield]][ruff-link] [![mypy][mypy-shield]][mypy-link] [![copier][copier-shield]][copier] 
+|         | Badges |
+| ------- | ------------- |
+| Code    | [![License][license-shield]][license-link] [![ruff][ruff-shield]][ruff-link] [![mypy][mypy-shield]][mypy-link]
+| Github  | [![Github Issues][issues-shield]][issues-link] [![Github Action][action-shield]][action-link] [![Github Commits][commit-activity-shield]][commit-activity-link]
+| Package | [![pypi-version][pypi-version-shield]][pypi-link] [![pypi-version][pypi-downloads-shield]][pypi-link] [![python-versions][python-versions-shield]][pypi-link] 
+| Docker  | [![docker][docker-pulls-shield]][docker-link] [![docker][docker-size-shield]][docker-link] [![Base Image][base-image-shield]][base-image-link]
+| Tools   | [![poetry][poetry-shield]][poetry-link] [![copier][copier-shield]][copier] [![task][task-shield]][task-link]
 
-<!-- vim-markdown-toc GitLab -->
-
-* [Motivation](#motivation)
-* [Status of this Project](#status-of-this-project)
-* [Development](#development)
-* [Data: `__metadata__.json`](#data-__metadata__json)
-    * [Location](#location)
-    * [Content](#content)
-    * [Schema](#schema)
-* [Frontend](#frontend)
-* [Command Line Tool](#command-line-tool)
-
-<!-- vim-markdown-toc -->
 
 ## Motivation
 
@@ -51,7 +43,7 @@ This section describes the details about JSON data artifact document which holds
 
 ### Location
 
-In your pipeline description, create an additional job with the ID `__metadata__` which creates an artifact with the path `__metadata__.json`.
+In your pipeline description, create a job which provides an artifact with the path `__metadata__.json`.
 
 A `.gitlab-ci.yml`, which provides an empty data artifact is available [here](https://gitlab.com/seebi/gitlab-pipeline-metadata/-/blob/main/.gitlab-ci.yml?ref_type=eb2b4498).
 
@@ -142,3 +134,23 @@ coverage  85%      label: Code Coverage
 [mypy-shield]: https://www.mypy-lang.org/static/mypy_badge.svg
 [copier]: https://copier.readthedocs.io/
 [copier-shield]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json
+[docker-link]: https://hub.docker.com/r/seebi/cimd
+[docker-pulls-shield]: https://img.shields.io/docker/pulls/seebi/cimd?logo=docker&logoColor=white
+[docker-size-shield]: https://img.shields.io/docker/image-size/seebi/cimd/latest?logo=docker&logoColor=white
+[action-link]: https://github.com/seebi/cimd/actions
+[action-shield]: https://github.com/seebi/cimd/actions/workflows/check.yml/badge.svg
+[commit-activity-shield]: https://img.shields.io/github/commit-activity/y/seebi/cimd?logo=github&logoColor=white
+[commit-activity-link]: https://github.com/seebi/cimd/pulse/monthly
+[license-link]: https://github.com/seebi/cimd?tab=Apache-2.0-1-ov-file
+[license-shield]: https://img.shields.io/pypi/l/cimd?logo=apache&logoColor=white
+[pypi-link]: https://pypi.org/project/cimd
+[pypi-version-shield]: https://img.shields.io/pypi/v/cimd?logo=pypi&logoColor=white
+[pypi-downloads-shield]: https://img.shields.io/pypi/dm/cimd?logo=pypi&logoColor=white
+[python-versions-shield]: https://img.shields.io/pypi/pyversions/cimd?logo=python&logoColor=white
+[issues-shield]: https://img.shields.io/github/issues/seebi/cimd?logo=github&logoColor=white
+[issues-link]: https://github.com/seebi/cimd/issues
+[base-image-shield]: https://img.shields.io/badge/FROM-ubi9--minimal-orange?logo=redhat
+[base-image-link]: https://hub.docker.com/r/redhat/ubi9-minimal/tags
+[task-shield]: https://img.shields.io/badge/Taskfile-Enabled-brightgreen?logo=task&logoColor=white
+[task-link]: https://taskfile.dev/
+
