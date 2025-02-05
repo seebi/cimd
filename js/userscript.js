@@ -20,7 +20,7 @@ function getPipelineIDs() {
      * @return {String[]} List of Pipeline IDs
      */
     var ids = new Array()
-    $("*[data-testid='pipeline-table-row']").find("*[data-testid='pipeline-url-link']").each(
+    $("tr[data-testid='pipeline-table-row']").find("a[data-testid='pipeline-url-link']").each(
         function(index){
             ids.push($(this).text().replace("#", ""))
         }
@@ -142,8 +142,8 @@ function extendRow(pipeline_id){
      * @return None
      */
     extendTableIfNeeded()
-    var pipeline_link = $("*[data-testid='pipeline-url-link']:contains('#" + pipeline_id + "')")
-    var pipeline_row = pipeline_link.closest("*[data-testid='pipeline-table-row']")
+    var pipeline_link = $("a[data-testid='pipeline-url-link']:contains('#" + pipeline_id + "')")
+    var pipeline_row = pipeline_link.closest("tr[data-testid='pipeline-table-row']")
     var container = pipeline_row.find("div.meta-data-container")
     const items = pipeline_data[pipeline_id].items
     const keys = Object.keys(items)
@@ -165,23 +165,26 @@ function getDataForPipeline(pipeline_id){
      */
     var url = getDownloadableArtifactUrl(pipeline_id)
     console.log("Fetching data for pipeline: " + pipeline_id + " (" + url + ")")
+    if (typeof pipeline_data[pipeline_id] != "undefined") {
+        console.log("Metadata for pipeline: " + pipeline_id + " already fetched")
+        extendRow(pipeline_id)
+        return
+    }
+    pipeline_data[pipeline_id] = {}
     $.getJSON(url, function(json) {
-        pipeline_data[pipeline_id] = {}
-        pipeline_data[pipeline_id].items = {};
         pipeline_data[pipeline_id].downloadable_artifacts = json;
+        pipeline_data[pipeline_id].items = {};
         json.artifacts.forEach(function(artifact) {
-            if (artifact.name.includes("__metadata__")){
-                var job_id = getJobIDfromPath(artifact.path)
-                var artifact_url = getArtifactUrl(job_id)
-                console.log("Fetching __metadata__ artifact for pipeline: " + pipeline_id + " (Job: " + job_id + " - " + artifact_url + ")")
-                $.getJSON(artifact_url, function(metadata) {
-                    var items = metadata.items
-                    for (const item in items) {
-                        pipeline_data[pipeline_id].items[item] = items[item]
-                    }
-                    extendRow(pipeline_id)
-                });
-            }
+            var job_id = getJobIDfromPath(artifact.path)
+            var artifact_url = getArtifactUrl(job_id)
+            console.log("Fetching __metadata__ artifact for pipeline: " + pipeline_id + " (Job: " + job_id + " - " + artifact_url + ")")
+            $.getJSON(artifact_url, function(metadata) {
+                var items = metadata.items
+                for (const item in items) {
+                    pipeline_data[pipeline_id].items[item] = items[item]
+                }
+                extendRow(pipeline_id)
+            });
         });
     });
 }
