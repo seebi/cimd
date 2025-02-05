@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+TODO: add at least one Added, Changed, Deprecated, Removed, Fixed or Security section
+
+
+## [0.6.1] 2025-02-04
+
 ### Fixed
 
 - extract trivy-scan: model error on empty Results and Vulnerabilities list
