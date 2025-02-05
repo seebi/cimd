@@ -1,6 +1,6 @@
 # https://docs.docker.com/build/ci/github-actions/manage-tags-labels/
 ---
-name: ci
+name: docker
 
 on:
   push:
@@ -11,9 +11,36 @@ on:
   pull_request:
 
 jobs:
-  docker:
+  publish:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Task
+        uses: arduino/setup-task@v2
+
+      - name: Set up python
+        id: setup-python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install and configure poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
+
+      - name: Install dynamic versioning plugin
+        run: |
+          poetry self add "poetry-dynamic-versioning[plugin]"
+
+      - name: Build Package
+        run: |
+          task build
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
