@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 TODO: add at least one Added, Changed, Deprecated, Removed, Fixed or Security section
 
+### Added
+
+- docker image available: `seebi/cimd`
+  - https://hub.docker.com/repository/docker/seebi/cimd/
+
 
 ## [0.6.1] 2025-02-04
 
