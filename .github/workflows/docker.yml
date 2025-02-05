@@ -33,7 +33,7 @@ jobs:
           virtualenvs-in-project: true
           installer-parallel: true
 
-      - name: Install dynamic versioning plugin
+      - name: Install poetry plugins
         run: |
           poetry self add "poetry-dynamic-versioning[plugin]"
           poetry self add "poetry-plugin-export"
@@ -46,6 +46,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
+          context: .
           # list of Docker images to use as base name for tags
           images: |
             seebi/cimd
