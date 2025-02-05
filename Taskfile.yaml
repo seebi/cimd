@@ -182,6 +182,18 @@ tasks:
       - poetry:check
     cmds:
       - poetry build
+      - poetry export --without=dev -f requirements.txt >dist/requirements.txt
+
+  docker:build:
+    desc: Build the docker image
+    deps:
+      - build
+    cmds:
+      - docker build -t {{.IMAGE}}:{{.VERSION}} .
+    vars:
+      IMAGE: seebi/cimd
+      VERSION:
+        sh: git describe --always --dirty
 
   install:
     desc: Install from the sources (pipx)
