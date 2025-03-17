@@ -4,6 +4,7 @@ import click
 
 from cimd.classes import context
 from cimd.commands import add, delete, get, list
+from cimd.commands.extend import gitlab_link
 from cimd.commands.extract import pipeline_logs, trivy_scans
 
 
@@ -31,11 +32,19 @@ def extract_group() -> click.Group:  # type: ignore[empty-body]
     """Scrape and collect metadata from sources."""
 
 
+@click.group(name="extend")
+def extend_group() -> click.Group:  # type: ignore[empty-body]
+    """Extend metadata items with custom data."""
+
+
+extend_group.add_command(gitlab_link.gitlab_link_command)
+cli.add_command(extend_group)
+
 extract_group.add_command(pipeline_logs.pipeline_logs_command)
 extract_group.add_command(trivy_scans.trivy_scan_command)
+cli.add_command(extract_group)
 
 cli.add_command(add.add_command)
 cli.add_command(delete.delete_command)
 cli.add_command(get.get_command)
 cli.add_command(list.list_command)
-cli.add_command(extract_group)
