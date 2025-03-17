@@ -12,7 +12,7 @@ from tests import run, run_asserting_error
 
 
 @dataclass
-class TestData:
+class FixtureData:
     """TestData"""
 
     key1: str = "coverage"
@@ -25,18 +25,18 @@ class TestData:
 
 
 @pytest.fixture
-def test_data() -> Generator[TestData, Any, None]:
+def fixture_data() -> Generator[FixtureData, Any, None]:
     """Provide test data"""
     current_dir = Path(__file__).parent
-    _ = TestData()
+    _ = FixtureData()
     yield _
     chdir(current_dir)
 
 
-def test_basic_crud(tmp_path: Path, test_data: TestData) -> None:
+def test_basic_crud(tmp_path: Path, fixture_data: FixtureData) -> None:
     """Test basic CRUD"""
     chdir(tmp_path)
-    _ = test_data
+    _ = fixture_data
     assert run(command=("list", "--keys-only")).line_count == 0
     run(command=("add", _.key1, _.value1))
     run_after_add = run(command=("list", "--keys-only"))
@@ -50,10 +50,10 @@ def test_basic_crud(tmp_path: Path, test_data: TestData) -> None:
     run_asserting_error(command=("delete", _.key1), match="does not exist in file")
 
 
-def test_optional_data_and_get(tmp_path: Path, test_data: TestData) -> None:
+def test_optional_data_and_get(tmp_path: Path, fixture_data: FixtureData) -> None:
     """Test optional data and get"""
     chdir(tmp_path)
-    _ = test_data
+    _ = fixture_data
     assert run(command=("list", "--keys-only")).line_count == 0
     run_asserting_error(command=("get", _.key1, "description"), match="does not exist")
     run(command=("add", _.key1, _.value1, "--label", _.label1, "--replace"))
@@ -71,10 +71,10 @@ def test_optional_data_and_get(tmp_path: Path, test_data: TestData) -> None:
     assert run(command=("get", _.key1, "link")).lines[0] == _.link1
 
 
-def test_table_list(tmp_path: Path, test_data: TestData) -> None:
+def test_table_list(tmp_path: Path, fixture_data: FixtureData) -> None:
     """Test table list"""
     chdir(tmp_path)
-    _ = test_data
+    _ = fixture_data
     assert run(command=("list", "--keys-only")).line_count == 0
     run(
         command=(
