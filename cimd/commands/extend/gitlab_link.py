@@ -18,6 +18,7 @@ def get_job_url(ctx: click.core.Context, param: click.Option, value: str | None)
                 "Either use the --job option or set the CI_JOB_URL environment variable."
             )
         value = os.environ.get("CI_JOB_URL", "")
+    value = value.strip("/")
     app.echo_debug(f"Job URL: {value}")
     return value
 
@@ -49,6 +50,7 @@ def gitlab_link_command(
     app: ApplicationContext, filtered_items: dict[str, Item], job_url: str, artifact_path: str
 ) -> None:
     """Extend metadata items with a raw gitlab artifact link."""
+    artifact_path = artifact_path.strip("/")
     for key, item in filtered_items.items():
-        item.link = f"{job_url}/artifacts/raw/{artifact_path}".replace("//", "/")
+        item.link = f"{job_url}/artifacts/raw/{artifact_path}"
         app.add_item(key=key, item=item, replace=True)

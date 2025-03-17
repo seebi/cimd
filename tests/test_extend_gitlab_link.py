@@ -51,6 +51,28 @@ def test_with_env(monkeypatch: MonkeyPatch) -> None:
 
 
 @pytest.mark.usefixtures("new_dir")
+def test_url_generation() -> None:
+    """Test update links - url generation"""
+    extend_cmd = [
+        "extend",
+        "gitlab-link",
+        "--artifact-path",
+        "dir/file",
+        "--key",
+        "key",
+        "--job-url",
+    ]
+    host_prot = "https://example.org"
+    url = f"{host_prot}/artifacts/raw/dir/file"
+    run(command=("add", "key", "value"))
+    assert run(command=("list", "--keys-only")).line_count == 1
+    run(command=(*extend_cmd, host_prot))
+    assert run(command=("get", "key", "link")).lines[0] == url
+    run(command=(*extend_cmd, host_prot + "/"))
+    assert run(command=("get", "key", "link")).lines[0] == url
+
+
+@pytest.mark.usefixtures("new_dir")
 def test_success() -> None:
     """Test update links - successful commands"""
     extend_cmd = [
