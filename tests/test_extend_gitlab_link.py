@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 import pytest
+from _pytest.monkeypatch import MonkeyPatch
 
 from tests import run, run_asserting_error
 
@@ -27,6 +28,26 @@ def test_fails() -> None:
         command=extend_cmd,
         match="Either use the --job option or set the CI_JOB_URL environment variable.",
     )
+
+
+@pytest.mark.usefixtures("new_dir")
+def test_with_env(monkeypatch: MonkeyPatch) -> None:
+    """Test extend gitlab-link command with environment variables"""
+    extend_cmd = ["extend", "gitlab-link", "--artifact-path", "dir/file", "--key", "key"]
+    assert run(command=("list", "--keys-only")).line_count == 0
+    assert run(command=("add", "key", "value"))
+    assert run(command=("list", "--keys-only")).line_count == 1
+    run_asserting_error(
+        command=["get", "key", "link"],
+        match="has no attribute",
+    )
+    run_asserting_error(
+        command=extend_cmd,
+        match="Either use the --job option or set the CI_JOB_URL environment variable.",
+    )
+    monkeypatch.setenv("CI_JOB_URL", "https://example.org/")
+    run(command=extend_cmd)
+    run(["get", "key", "link"])
 
 
 @pytest.mark.usefixtures("new_dir")

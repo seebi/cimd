@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/)
 
+## [0.8.1] 2025-03-17
+
+### Fixed
+
+- `extend gitlab-link` command:
+  - exception when using `CI_JOB_URL` environment variable
+
 ## [0.8.0] 2025-03-17
 
 ### Added

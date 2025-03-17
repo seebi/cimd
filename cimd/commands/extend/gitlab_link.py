@@ -9,7 +9,7 @@ from cimd.classes.context import ApplicationContext
 from cimd.classes.metadata import Item
 
 
-def get_job_url(ctx: click.core.Context, param: click.Option, value: int | None) -> int:  # noqa: ARG001
+def get_job_url(ctx: click.core.Context, param: click.Option, value: str | None) -> str:  # noqa: ARG001
     """Use Job URL from CI_JOB_URL if not given."""
     app: ApplicationContext = ctx.obj
     if not value:
@@ -17,7 +17,7 @@ def get_job_url(ctx: click.core.Context, param: click.Option, value: int | None)
             raise click.UsageError(
                 "Either use the --job option or set the CI_JOB_URL environment variable."
             )
-        value = int(str(os.environ.get("CI_JOB_URL")))
+        value = os.environ.get("CI_JOB_URL", "")
     app.echo_debug(f"Job URL: {value}")
     return value
 
