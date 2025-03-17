@@ -1,0 +1,473 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-03-17T12:41:07.721747213Z",
+  "ArtifactName": "seebi/cimd:latest",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "redhat",
+      "Name": "9.5"
+    },
+    "ImageID": "sha256:1d05e7fa3d3b8907dca937541c5466a82b6155321738229289359d2e98f686a6",
+    "DiffIDs": [
+      "sha256:371c260b23b2fcb9af126e449d6b27a0677a010c6e1c4aa72192b9c3af754519",
+      "sha256:2d6cb956f8bb863980f78c6944be8cdb50b25adb85a61dd8efac2c8a44c2eb21",
+      "sha256:e730565360bc2f56c6b089d25d32cda8f14f357125e58d5fe2478c1c0267ff79",
+      "sha256:4e9f0f5aae95eeb10fd006f636221afa511b699c56f342ab1931077b39d412f5",
+      "sha256:c128474c4e7140e2cdf3073f478e08a63a21e75edd43d9045f7a81fbb631a88f",
+      "sha256:7fb785bf2792b5506add4f3f0b5402a1bd20cb8ab517fbd62504dbf6203fd330",
+      "sha256:8591fc47fbbaa2d99b97f73d731a6516bab181f63c6e62d353c87c8b87f0310e"
+    ],
+    "RepoTags": [
+      "seebi/cimd:latest"
+    ],
+    "RepoDigests": [
+      "seebi/cimd@sha256:a195a14f358c749948839256f2a299f3bdd94a2d685daebd280a26fcd01e118a"
+    ],
+    "ImageConfig": {
+      "architecture": "arm64",
+      "created": "2025-02-05T20:58:16.096644513Z",
+      "history": [
+        {
+          "created": "2025-02-04T04:41:21.592677126Z",
+          "created_by": "/bin/sh -c #(nop) LABEL maintainer=\"Red Hat, Inc.\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:21.613801051Z",
+          "created_by": "/bin/sh -c #(nop) LABEL vendor=\"Red Hat, Inc.\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:21.634679399Z",
+          "created_by": "/bin/sh -c #(nop) LABEL url=\"https://www.redhat.com\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:21.655238487Z",
+          "created_by": "/bin/sh -c #(nop) LABEL com.redhat.component=\"ubi9-minimal-container\"       name=\"ubi9-minimal\"       version=\"9.5\"       distribution-scope=\"public\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:21.676347004Z",
+          "created_by": "/bin/sh -c #(nop) LABEL com.redhat.license_terms=\"https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:21.697149249Z",
+          "created_by": "/bin/sh -c #(nop) LABEL summary=\"Provides the latest release of the minimal Red Hat Universal Base Image 9.\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:21.718214878Z",
+          "created_by": "/bin/sh -c #(nop) LABEL description=\"The Universal Base Image Minimal is a stripped down image that uses microdnf as a package manager. This base image is freely redistributable, but Red Hat only supports Red Hat technologies through subscriptions for Red Hat products. This image is maintained by Red Hat and updated regularly.\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:21.739014818Z",
+          "created_by": "/bin/sh -c #(nop) LABEL io.k8s.description=\"The Universal Base Image Minimal is a stripped down image that uses microdnf as a package manager. This base image is freely redistributable, but Red Hat only supports Red Hat technologies through subscriptions for Red Hat products. This image is maintained by Red Hat and updated regularly.\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:21.759600688Z",
+          "created_by": "/bin/sh -c #(nop) LABEL io.k8s.display-name=\"Red Hat Universal Base Image 9 Minimal\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:21.780262774Z",
+          "created_by": "/bin/sh -c #(nop) LABEL io.openshift.expose-services=\"\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:21.801605102Z",
+          "created_by": "/bin/sh -c #(nop) LABEL io.openshift.tags=\"minimal rhel9\"",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:21.823551053Z",
+          "created_by": "/bin/sh -c #(nop) ENV container oci",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:22.691087079Z",
+          "created_by": "/bin/sh -c #(nop) COPY dir:9a473b4852f6cbe9a0f08b40d1fff87f485e10a0b3973b8009cae74075e5e063 in / ",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:22.813947008Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:b37d593713ee21ad52a4cd1424dc019a24f7966f85df0ac4b86d234302695328 in /etc/yum.repos.d/. ",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:22.837137446Z",
+          "created_by": "/bin/sh -c #(nop) CMD [\"/bin/bash\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:23.150795235Z",
+          "created_by": "/bin/sh -c . /cachi2/cachi2.env \u0026\u0026     rm -rf /var/log/*",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-04T04:41:23.46824371Z",
+          "created_by": "/bin/sh -c #(nop) LABEL \"build-date\"=\"2025-02-04T04:40:56\" \"architecture\"=\"aarch64\" \"vcs-type\"=\"git\" \"vcs-ref\"=\"177f460763ad3b12e4b8be13035c0af01fc0d47e\" \"build-date\"=\"2025-02-04T04:34:12Z\" \"release\"=\"1738643652\""
+        },
+        {
+          "created": "2025-02-04T04:41:33.000826683Z",
+          "created_by": "/bin/sh",
+          "comment": "FROM quay.io/redhat-user-workloads/osci-rhel-containers-tenant/rhel-9-5/ubi9-minimal-9-5:177f460763ad3b12e4b8be13035c0af01fc0d47e-linux-arm64"
+        },
+        {
+          "created": "2025-02-05T20:56:48.006748666Z",
+          "created_by": "LABEL maintainer=Sebastian Tramp",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T20:56:48.006748666Z",
+          "created_by": "LABEL vendor=Sebastian Tramp",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T20:56:48.006748666Z",
+          "created_by": "LABEL url=https://github.com/seebi/cimd",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T20:56:48.006748666Z",
+          "created_by": "ENV OC_IMAGE_VENDOR=Sebastian Tramp",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T20:56:48.006748666Z",
+          "created_by": "ENV OC_IMAGE_TITLE=cimd",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T20:56:48.006748666Z",
+          "created_by": "ENV OC_IMAGE_DESCRIPTION=Collect and share metadata of CI/CD processes.",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T20:56:48.006748666Z",
+          "created_by": "ENV OC_IMAGE_URL=https://github.com/seebi/cimd",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T20:56:48.006748666Z",
+          "created_by": "ENV OC_IMAGE_DOCUMENTATION=https://github.com/seebi/cimd",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T20:56:48.006748666Z",
+          "created_by": "ARG TARGETARCH=arm64",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T20:56:48.006748666Z",
+          "created_by": "COPY dist /tmp/dist # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T20:56:48.006748666Z",
+          "created_by": "ENV PATH=/app/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T20:57:41.623520884Z",
+          "created_by": "RUN |1 TARGETARCH=arm64 /bin/sh -c echo \"I'm building for $TARGETARCH\" \u0026\u0026     microdnf update -y \u0026\u0026     microdnf upgrade -y \u0026\u0026     microdnf install -y python3.11 python3.11-pip \u0026\u0026     ln -s /usr/bin/python3.11 /usr/bin/python \u0026\u0026     ln -s /usr/bin/pip3.11 /usr/bin/pip \u0026\u0026     python -m venv /app \u0026\u0026     source /app/bin/activate \u0026\u0026     pip install --upgrade pip setuptools # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T20:58:15.287300371Z",
+          "created_by": "RUN |1 TARGETARCH=arm64 /bin/sh -c pip install -r /tmp/dist/requirements.txt \u0026\u0026     pip install --no-deps /tmp/dist/cimd*.tar.gz # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T20:58:16.085382408Z",
+          "created_by": "RUN |1 TARGETARCH=arm64 /bin/sh -c microdnf clean all \u0026\u0026     rm -rf /root/.cache \u0026\u0026     rm -rf /usr/lib/python3.11/site-packages/* # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T20:58:16.096644513Z",
+          "created_by": "WORKDIR /data",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2025-02-05T20:58:16.096644513Z",
+          "created_by": "VOLUME [/data]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2025-02-05T20:58:16.096644513Z",
+          "created_by": "ENTRYPOINT [\"/app/bin/cimd\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:371c260b23b2fcb9af126e449d6b27a0677a010c6e1c4aa72192b9c3af754519",
+          "sha256:2d6cb956f8bb863980f78c6944be8cdb50b25adb85a61dd8efac2c8a44c2eb21",
+          "sha256:e730565360bc2f56c6b089d25d32cda8f14f357125e58d5fe2478c1c0267ff79",
+          "sha256:4e9f0f5aae95eeb10fd006f636221afa511b699c56f342ab1931077b39d412f5",
+          "sha256:c128474c4e7140e2cdf3073f478e08a63a21e75edd43d9045f7a81fbb631a88f",
+          "sha256:7fb785bf2792b5506add4f3f0b5402a1bd20cb8ab517fbd62504dbf6203fd330",
+          "sha256:8591fc47fbbaa2d99b97f73d731a6516bab181f63c6e62d353c87c8b87f0310e"
+        ]
+      },
+      "config": {
+        "Entrypoint": [
+          "/app/bin/cimd"
+        ],
+        "Env": [
+          "PATH=/app/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "container=oci",
+          "OC_IMAGE_VENDOR=Sebastian Tramp",
+          "OC_IMAGE_TITLE=cimd",
+          "OC_IMAGE_DESCRIPTION=Collect and share metadata of CI/CD processes.",
+          "OC_IMAGE_URL=https://github.com/seebi/cimd",
+          "OC_IMAGE_DOCUMENTATION=https://github.com/seebi/cimd"
+        ],
+        "Labels": {
+          "architecture": "aarch64",
+          "build-date": "2025-02-04T04:34:12Z",
+          "com.redhat.component": "ubi9-minimal-container",
+          "com.redhat.license_terms": "https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI",
+          "description": "The Universal Base Image Minimal is a stripped down image that uses microdnf as a package manager. This base image is freely redistributable, but Red Hat only supports Red Hat technologies through subscriptions for Red Hat products. This image is maintained by Red Hat and updated regularly.",
+          "distribution-scope": "public",
+          "io.buildah.version": "1.38.0-dev",
+          "io.k8s.description": "The Universal Base Image Minimal is a stripped down image that uses microdnf as a package manager. This base image is freely redistributable, but Red Hat only supports Red Hat technologies through subscriptions for Red Hat products. This image is maintained by Red Hat and updated regularly.",
+          "io.k8s.display-name": "Red Hat Universal Base Image 9 Minimal",
+          "io.openshift.expose-services": "",
+          "io.openshift.tags": "minimal rhel9",
+          "maintainer": "Sebastian Tramp",
+          "name": "ubi9-minimal",
+          "org.opencontainers.image.created": "2025-02-05T20:56:36.229Z",
+          "org.opencontainers.image.description": "Collect and share metadata of CI/CD processes.",
+          "org.opencontainers.image.licenses": "Apache-2.0",
+          "org.opencontainers.image.revision": "83cb818fe373a23f03956b2e3ca808293b82a863",
+          "org.opencontainers.image.source": "https://github.com/seebi/cimd",
+          "org.opencontainers.image.title": "cimd",
+          "org.opencontainers.image.url": "https://github.com/seebi/cimd",
+          "org.opencontainers.image.version": "0.6.2",
+          "release": "1738643652",
+          "summary": "Provides the latest release of the minimal Red Hat Universal Base Image 9.",
+          "url": "https://github.com/seebi/cimd",
+          "vcs-ref": "177f460763ad3b12e4b8be13035c0af01fc0d47e",
+          "vcs-type": "git",
+          "vendor": "Sebastian Tramp",
+          "version": "9.5"
+        },
+        "Volumes": {
+          "/data": {}
+        },
+        "WorkingDir": "/data"
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "seebi/cimd:latest (redhat 9.5)",
+      "Class": "os-pkgs",
+      "Type": "redhat",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2024-56171",
+          "VendorIDs": [
+            "RHSA-2025:2679"
+          ],
+          "PkgID": "libxml2@2.9.13-6.el9_4.aarch64",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/redhat/libxml2@2.9.13-6.el9_4?arch=aarch64\u0026distro=redhat-9.5",
+            "UID": "84e0983b5d527387"
+          },
+          "InstalledVersion": "2.9.13-6.el9_4",
+          "FixedVersion": "2.9.13-6.el9_5.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:371c260b23b2fcb9af126e449d6b27a0677a010c6e1c4aa72192b9c3af754519"
+          },
+          "SeveritySource": "redhat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56171",
+          "Title": "libxml2: Use-After-Free in libxml2",
+          "Description": "libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a use-after-free in xmlSchemaIDCFillNodeTables and xmlSchemaBubbleIDCNodeTables in xmlschemas.c. To exploit this, a crafted XML document must be validated against an XML schema with certain identity constraints, or a crafted XML schema must be used.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:2679",
+            "https://access.redhat.com/security/cve/CVE-2024-56171",
+            "https://bugzilla.redhat.com/2346416",
+            "https://bugzilla.redhat.com/2346421",
+            "https://errata.almalinux.org/9/ALSA-2025-2679.html",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/828",
+            "https://linux.oracle.com/cve/CVE-2024-56171.html",
+            "https://linux.oracle.com/errata/ELSA-2025-2686.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-56171",
+            "https://ubuntu.com/security/notices/USN-7302-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-56171",
+            "https://www.openwall.com/lists/oss-security/2025/02/18/2"
+          ],
+          "PublishedDate": "2025-02-18T22:15:12.797Z",
+          "LastModifiedDate": "2025-02-18T23:15:09.413Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-24928",
+          "VendorIDs": [
+            "RHSA-2025:2679"
+          ],
+          "PkgID": "libxml2@2.9.13-6.el9_4.aarch64",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/redhat/libxml2@2.9.13-6.el9_4?arch=aarch64\u0026distro=redhat-9.5",
+            "UID": "84e0983b5d527387"
+          },
+          "InstalledVersion": "2.9.13-6.el9_4",
+          "FixedVersion": "2.9.13-6.el9_5.2",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:371c260b23b2fcb9af126e449d6b27a0677a010c6e1c4aa72192b9c3af754519"
+          },
+          "SeveritySource": "redhat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-24928",
+          "Title": "libxml2: Stack-based buffer overflow in xmlSnprintfElements of libxml2",
+          "Description": "libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a stack-based buffer overflow in xmlSnprintfElements in valid.c. To exploit this, DTD validation must occur for an untrusted document or untrusted DTD. NOTE: this is similar to CVE-2017-9047.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-121"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:2679",
+            "https://access.redhat.com/security/cve/CVE-2025-24928",
+            "https://bugzilla.redhat.com/2346416",
+            "https://bugzilla.redhat.com/2346421",
+            "https://errata.almalinux.org/9/ALSA-2025-2679.html",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/847",
+            "https://issues.oss-fuzz.com/issues/392687022",
+            "https://linux.oracle.com/cve/CVE-2025-24928.html",
+            "https://linux.oracle.com/errata/ELSA-2025-2686.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-24928",
+            "https://ubuntu.com/security/notices/USN-7302-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-24928",
+            "https://www.openwall.com/lists/oss-security/2025/02/18/2"
+          ],
+          "PublishedDate": "2025-02-18T23:15:10.25Z",
+          "LastModifiedDate": "2025-02-18T23:15:10.25Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-12797",
+          "VendorIDs": [
+            "RHSA-2025:1330"
+          ],
+          "PkgID": "openssl-libs@3.2.2-6.el9_5.aarch64",
+          "PkgName": "openssl-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:rpm/redhat/openssl-libs@3.2.2-6.el9_5?arch=aarch64\u0026distro=redhat-9.5\u0026epoch=1",
+            "UID": "6cebcac76a252173"
+          },
+          "InstalledVersion": "1:3.2.2-6.el9_5",
+          "FixedVersion": "1:3.2.2-6.el9_5.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:371c260b23b2fcb9af126e449d6b27a0677a010c6e1c4aa72192b9c3af754519"
+          },
+          "SeveritySource": "redhat",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-12797",
+          "Title": "openssl: RFC7250 handshakes with unauthenticated servers don't abort as expected",
+          "Description": "Issue summary: Clients using RFC7250 Raw Public Keys (RPKs) to authenticate a\nserver may fail to notice that the server was not authenticated, because\nhandshakes don't abort as expected when the SSL_VERIFY_PEER verification mode\nis set.\n\nImpact summary: TLS and DTLS connections using raw public keys may be\nvulnerable to man-in-middle attacks when server authentication failure is not\ndetected by clients.\n\nRPKs are disabled by default in both TLS clients and TLS servers.  The issue\nonly arises when TLS clients explicitly enable RPK use by the server, and the\nserver, likewise, enables sending of an RPK instead of an X.509 certificate\nchain.  The affected clients are those that then rely on the handshake to\nfail when the server's RPK fails to match one of the expected public keys,\nby setting the verification mode to SSL_VERIFY_PEER.\n\nClients that enable server-side raw public keys can still find out that raw\npublic key verification failed by calling SSL_get_verify_result(), and those\nthat do, and take appropriate action, are not affected.  This issue was\nintroduced in the initial implementation of RPK support in OpenSSL 3.2.\n\nThe FIPS modules in 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this issue.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-392"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "ghsa": 1,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/02/11/3",
+            "http://www.openwall.com/lists/oss-security/2025/02/11/4",
+            "https://access.redhat.com/errata/RHSA-2025:1330",
+            "https://access.redhat.com/security/cve/CVE-2024-12797",
+            "https://bugzilla.redhat.com/2342757",
+            "https://errata.almalinux.org/9/ALSA-2025-1330.html",
+            "https://github.com/openssl/openssl/commit/738d4f9fdeaad57660dcba50a619fafced3fd5e9",
+            "https://github.com/openssl/openssl/commit/798779d43494549b611233f92652f0da5328fbe7",
+            "https://github.com/openssl/openssl/commit/87ebd203feffcf92ad5889df92f90bb0ee10a699",
+            "https://github.com/pyca/cryptography",
+            "https://github.com/pyca/cryptography/security/advisories/GHSA-79v4-65xg-pq4g",
+            "https://linux.oracle.com/cve/CVE-2024-12797.html",
+            "https://linux.oracle.com/errata/ELSA-2025-1330.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-12797",
+            "https://openssl-library.org/news/secadv/20250211.txt",
+            "https://security.netapp.com/advisory/ntap-20250214-0001/",
+            "https://ubuntu.com/security/notices/USN-7264-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-12797"
+          ],
+          "PublishedDate": "2025-02-11T16:15:38.827Z",
+          "LastModifiedDate": "2025-02-18T14:15:27.107Z"
+        }
+      ]
+    },
+    {
+      "Target": "Python",
+      "Class": "lang-pkgs",
+      "Type": "python-pkg"
+    }
+  ]
+}

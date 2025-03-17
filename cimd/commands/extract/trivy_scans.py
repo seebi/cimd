@@ -62,21 +62,45 @@ def image_for_severity_count(severity: str, count: int) -> str:
     type=click.Path(exists=True, dir_okay=False, file_okay=True, readable=True, resolve_path=True),
 )
 @click.option(
+    "--severity",
+    type=click.Choice(list(COLORS.keys()), case_sensitive=False),
+    help="Request a single severity group only. This results in explicit zero counts.",
+)
+@click.option(
+    "--all",
+    "all_",
+    is_flag=True,
+    help="Will explicitly extract all known severity groups, even zero counts.",
+)
+@click.option(
     "--replace",
     is_flag=True,
-    show_default=True,
     help="Replace items in case they already exists.",
 )
 @click.pass_obj
-def trivy_scan_command(app: ApplicationContext, json_file: str, replace: bool) -> None:
-    """Extract metadata from a trivy scan JSON output file."""
+def trivy_scan_command(
+    app: ApplicationContext, json_file: str, severity: str, all_: bool, replace: bool
+) -> None:
+    """Extract metadata from a trivy scan JSON output file.
+
+    This command will extract counts of vulnerabilities, grouped by
+    severity. Per default, only severity groups with at least one
+    vulnerability will be extracted. If you need explicit zero counts,
+    use `--severity` or `--all`.
+    """
     counter = count_json_file(json_file=json_file)
-    for severity, count in counter.items():
-        key = f"trivy-scan-{severity.lower()}"
+    severities = [severity] if severity else counter.keys()
+    if all_:
+        severities = list(COLORS.keys())
+        severities.extend(counter.keys())
+        severities = list(set(severities))
+    for _ in severities:
+        count = counter.get(_, 0)
+        key = f"trivy-scan-{_.lower()}"
         new_item = Item(
             value=str(count),
-            label=severity,
-            description=f"Count of found vulnerabilities with severity '{severity}'",
-            image=image_for_severity_count(severity=severity, count=count),
+            label=_,
+            description=f"Count of found vulnerabilities with severity '{_}'",
+            image=image_for_severity_count(severity=_, count=count),
         )
         app.add_item(key=key, item=new_item, replace=replace)

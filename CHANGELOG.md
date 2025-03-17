@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/)
 
+## [0.7.0] 2025-03-17
+
+### Fixed
+
+- even extraction of zero keys will result in a metadata file
+
+### Added
+
+- extract trivy-scan:
+  - --all option to extract all vulnerability groups
+  - --severity option to extract an explicit Vulnerability group
+
 ## [0.6.2] 2025-02-05
 
 ### Added
