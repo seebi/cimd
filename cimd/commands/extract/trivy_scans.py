@@ -9,6 +9,14 @@ from cimd.classes.context import ApplicationContext
 from cimd.classes.metadata import Item
 from cimd.classes.shields_link import ShieldsLink
 
+COLORS = {
+    "CRITICAL": "red",
+    "HIGH": "orange",
+    "MEDIUM": "yellow",
+    "LOW": "green",
+    "UNKNOWN": "lightgray",
+}
+
 
 class Vulnerability(BaseModel):
     """Single vulnerability item"""
@@ -44,14 +52,7 @@ def count_json_file(json_file: str) -> dict[str, int]:
 def image_for_severity_count(severity: str, count: int) -> str:
     """Create a shields.io image for a severity count"""
     severity = severity.upper()
-    colors = {
-        "CRITICAL": "red",
-        "HIGH": "orange",
-        "MEDIUM": "yellow",
-        "LOW": "green",
-        "UNKNOWN": "lightgray",
-    }
-    color = colors.get(severity, "blue")
+    color = COLORS.get(severity, "blue")
     return ShieldsLink(label=severity, message=str(count), color=color, logo="trivy").to_string()
 
 
