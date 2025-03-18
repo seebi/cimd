@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/)
 
+## [0.9.0]
+
+### Added
+
+- `extract junit-xml` command:
+  - Extract metadata from a JUnit XML output files.
+
+### Fixed
+
+- shields.io API: proper handling of spaces
+
 ## [0.8.2] 2025-03-18
 
 ### Fixed

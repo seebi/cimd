@@ -33,9 +33,9 @@ def fixture_data() -> Generator[FixtureData, Any, None]:
     chdir(current_dir)
 
 
-def test_basic_crud(tmp_path: Path, fixture_data: FixtureData) -> None:
+@pytest.mark.usefixtures("new_dir")
+def test_basic_crud(fixture_data: FixtureData) -> None:
     """Test basic CRUD"""
-    chdir(tmp_path)
     _ = fixture_data
     assert run(command=("list", "--keys-only")).line_count == 0
     run(command=("add", _.key1, _.value1))
@@ -52,9 +52,9 @@ def test_basic_crud(tmp_path: Path, fixture_data: FixtureData) -> None:
     run_asserting_error(command=("delete", "["), match="Invalid regular expression")
 
 
-def test_optional_data_and_get(tmp_path: Path, fixture_data: FixtureData) -> None:
+@pytest.mark.usefixtures("new_dir")
+def test_optional_data_and_get(fixture_data: FixtureData) -> None:
     """Test optional data and get"""
-    chdir(tmp_path)
     _ = fixture_data
     assert run(command=("list", "--keys-only")).line_count == 0
     run_asserting_error(command=("get", _.key1, "description"), match="does not exist")
@@ -73,9 +73,9 @@ def test_optional_data_and_get(tmp_path: Path, fixture_data: FixtureData) -> Non
     assert run(command=("get", _.key1, "link")).lines[0] == _.link1
 
 
-def test_table_list(tmp_path: Path, fixture_data: FixtureData) -> None:
+@pytest.mark.usefixtures("new_dir")
+def test_table_list(fixture_data: FixtureData) -> None:
     """Test table list"""
-    chdir(tmp_path)
     _ = fixture_data
     assert run(command=("list", "--keys-only")).line_count == 0
     run(
