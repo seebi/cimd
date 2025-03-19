@@ -7,7 +7,7 @@ authors = ["Sebastian Tramp <mail@sebastian.tramp.name>"]
 classifiers = [
     "Development Status :: 4 - Beta",
 ]
-readme = "README-public.md"
+readme = "README.md"
 
 homepage = "https://github.com/seebi/cimd"
 
@@ -21,6 +21,7 @@ pydantic = "^2.5.3"
 pygments = "^2.17.2"
 python-gitlab = "^5.6.0"
 tabulate = "^0.9.0"
+junitparser = "^3.2.0"
 
 [tool.poetry.group.dev.dependencies]
 genbadge = {extras = ["coverage"], version = "^1.1.1"}

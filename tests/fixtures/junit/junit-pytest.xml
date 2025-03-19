@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="3" failures="2" skipped="2" tests="14" time="0.475" timestamp="2025-03-18T13:07:27.349827+01:00" hostname="soljaris24"><testcase classname="tests.test_crud" name="test_basic_crud" time="0.022"><failure message="AssertionError: assert 'coverage' not in 'coverage\n'&#10;  &#10;  'coverage' is contained here:&#10;  Strings contain only whitespace, escaping them using repr()&#10;    'coverage\n'">tmp_path = PosixPath('/private/var/folders/zh/n19ztfmd2s7f7kdjd_0h3w8w0000gn/T/pytest-of-seebi/pytest-71/test_basic_crud0')
+fixture_data = FixtureData(key1='coverage', value1='80%', label1='Code Coverage', description1='pytest created test coverage percenta...', image1='https://github.com/seebi/cimd/actions/workflows/check.yml/badge.svg', link1='https://github.com/seebi/cimd')
+
+    def test_basic_crud(tmp_path: Path, fixture_data: FixtureData) -&gt; None:
+        """Test basic CRUD"""
+        chdir(tmp_path)
+        _ = fixture_data
+        assert run(command=("list", "--keys-only")).line_count == 0
+        run(command=("add", _.key1, _.value1))
+        run_after_add = run(command=("list", "--keys-only"))
+        assert run_after_add.line_count == 1
+&gt;       assert _.key1 not in run_after_add.stdout
+E       AssertionError: assert 'coverage' not in 'coverage\n'
+E         
+E         'coverage' is contained here:
+E         Strings contain only whitespace, escaping them using repr()
+E           'coverage\n'
+
+/Users/seebi/Repositories/gitlab/cimd/tests/test_crud.py:44: AssertionError</failure></testcase><testcase classname="tests.test_crud" name="test_optional_data_and_get" time="0.022"><failure message="AssertionError: assert not 'pytest creat...ge percentage' == 'pytest creat...ge percentage'&#10;  &#10;    pytest created test coverage percentage">tmp_path = PosixPath('/private/var/folders/zh/n19ztfmd2s7f7kdjd_0h3w8w0000gn/T/pytest-of-seebi/pytest-71/test_optional_data_and_get0')
+fixture_data = FixtureData(key1='coverage', value1='80%', label1='Code Coverage', description1='pytest created test coverage percenta...', image1='https://github.com/seebi/cimd/actions/workflows/check.yml/badge.svg', link1='https://github.com/seebi/cimd')
+
+    def test_optional_data_and_get(tmp_path: Path, fixture_data: FixtureData) -&gt; None:
+        """Test optional data and get"""
+        chdir(tmp_path)
+        _ = fixture_data
+        assert run(command=("list", "--keys-only")).line_count == 0
+        run_asserting_error(command=("get", _.key1, "description"), match="does not exist")
+        run(command=("add", _.key1, _.value1, "--label", _.label1, "--replace"))
+        assert run(command=("get", _.key1)).lines[0] == _.value1
+        assert run(command=("get", _.key1, "label")).lines[0] == _.label1
+        run_asserting_error(command=("get", _.key1, "description"), match="has no attribute")
+    
+        run(command=("add", _.key1, _.value1, "--description", _.description1, "--replace"))
+&gt;       assert not run(command=("get", _.key1, "description")).lines[0] == _.description1
+E       AssertionError: assert not 'pytest creat...ge percentage' == 'pytest creat...ge percentage'
+E         
+E           pytest created test coverage percentage
+
+/Users/seebi/Repositories/gitlab/cimd/tests/test_crud.py:67: AssertionError</failure></testcase><testcase classname="tests.test_crud" name="test_table_list" time="0.020" /><testcase classname="tests.test_extend_gitlab_link" name="test_fails" time="0.019" /><testcase classname="tests.test_extend_gitlab_link" name="test_with_env" time="0.000"><error message="failed on setup with &quot;ValueError&quot;">tmp_path = PosixPath('/private/var/folders/zh/n19ztfmd2s7f7kdjd_0h3w8w0000gn/T/pytest-of-seebi/pytest-71/test_with_env0')
+
+    @pytest.fixture
+    def new_dir(tmp_path: Path) -&gt; Generator[Path, Any, None]:
+        """Provide new test directory"""
+        current_directory = Path.cwd()
+        chdir(tmp_path)
+&gt;       raise ValueError()
+E       ValueError
+
+/Users/seebi/Repositories/gitlab/cimd/tests/test_extend_gitlab_link.py:19: ValueError</error></testcase><testcase classname="tests.test_extend_gitlab_link" name="test_url_generation" time="0.000"><error message="failed on setup with &quot;ValueError&quot;">tmp_path = PosixPath('/private/var/folders/zh/n19ztfmd2s7f7kdjd_0h3w8w0000gn/T/pytest-of-seebi/pytest-71/test_url_generation0')
+
+    @pytest.fixture
+    def new_dir(tmp_path: Path) -&gt; Generator[Path, Any, None]:
+        """Provide new test directory"""
+        current_directory = Path.cwd()
+        chdir(tmp_path)
+&gt;       raise ValueError()
+E       ValueError
+
+/Users/seebi/Repositories/gitlab/cimd/tests/test_extend_gitlab_link.py:19: ValueError</error></testcase><testcase classname="tests.test_extend_gitlab_link" name="test_success" time="0.000"><error message="failed on setup with &quot;ValueError&quot;">tmp_path = PosixPath('/private/var/folders/zh/n19ztfmd2s7f7kdjd_0h3w8w0000gn/T/pytest-of-seebi/pytest-71/test_success0')
+
+    @pytest.fixture
+    def new_dir(tmp_path: Path) -&gt; Generator[Path, Any, None]:
+        """Provide new test directory"""
+        current_directory = Path.cwd()
+        chdir(tmp_path)
+&gt;       raise ValueError()
+E       ValueError
+
+/Users/seebi/Repositories/gitlab/cimd/tests/test_extend_gitlab_link.py:19: ValueError</error></testcase><testcase classname="tests.test_extract_pipeline_logs" name="test_extract" time="0.000"><skipped type="pytest.skip" message="Need TEST_EXTRACT_PIPELINE_LOG_URL environment variable to run this test">/Users/seebi/Repositories/gitlab/cimd/tests/test_extract_pipeline_logs.py:55: Need TEST_EXTRACT_PIPELINE_LOG_URL environment variable to run this test</skipped></testcase><testcase classname="tests.test_extract_pipeline_logs" name="test_extract_fail" time="0.000"><skipped type="pytest.skip" message="Need TEST_EXTRACT_PIPELINE_LOG_URL environment variable to run this test">/Users/seebi/Repositories/gitlab/cimd/tests/test_extract_pipeline_logs.py:67: Need TEST_EXTRACT_PIPELINE_LOG_URL environment variable to run this test</skipped></testcase><testcase classname="tests.test_extract_trivy_scan" name="test_extract_trivy_scans[debian:bullseye-20240926-slim.json]" time="0.023" /><testcase classname="tests.test_extract_trivy_scan" name="test_extract_trivy_scans[seebi:cimd.json]" time="0.020" /><testcase classname="tests.test_extract_trivy_scan" name="test_extract_all_option[seebi:cimd.json]" time="0.020" /><testcase classname="tests.test_extract_trivy_scan" name="test_extract_severity_option[seebi:cimd.json]" time="0.021" /><testcase classname="tests.test_shields_link" name="test_shields_link" time="0.018" /></testsuite></testsuites>

@@ -30,8 +30,17 @@ class ShieldsLink:
 
     @staticmethod
     def _replace_chars(value: str) -> str:
-        """Replace _ and - with __ and --"""
-        return value.replace("_", "__").replace("-", "--")
+        """Replace some chars
+
+        - "_" -> "__"
+        - "-" -> "--"
+        - " " -> "%20"
+
+        """
+        value = value.replace("_", "__")
+        value = value.replace("-", "--")
+        value = value.replace(" ", "%20")
+        return value  # noqa: RET504
 
     @property
     def label(self) -> str | None:

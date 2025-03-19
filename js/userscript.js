@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name         Gitlab Pipeline Metadata
+// @name         Gitlab Pipeline Metadata (via cimd)
 // @description  Extend gitlab's pipeline list view with a metadata column to show pipeline metadata.
-// @version      SNAPSHOT
+// @version      v0.9.0
 // @author       Sebastian Tramp
-// @homepage     https://gitlab.com/seebi/gitlab-pipeline-metadata
+// @license      apache-2.0
+// @homepage     https://github.com/seebi/cimd
 // @namespace    https://sebastian.tramp.name/
 // @match        https://*/*/-/pipelines*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=gitlab.com
