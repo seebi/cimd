@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD012 MD013 MD024 MD033 -->
 <!-- https://github.com/DavidAnson/markdownlint?tab=readme-ov-file#configuration -->
 <h1 align="center">
-  <img src="docs/cimd.svg" alt="Logo" width="128">
+  <img src="https://raw.githubusercontent.com/seebi/cimd/refs/heads/main/docs/cimd.svg" alt="Logo" width="128">
 </h1>
 
 <p align="center">
@@ -53,7 +53,7 @@ The frontend is available as a single JavaScript file in the [js folder][userscr
 It is currently tested with Tampermonkey on Google Chrome only 🙈.
 Once activated, it will extend the pipeline view of your [![cmid metadata enabled][cmid-metadata-enabled]][cmid-metadata-enabled] GitLab project with a metadata column, showing the items (screenshot example below).
 
-![UI Example](docs/ui-example-v0.8.2.png "UI Example")
+![UI Example](https://raw.githubusercontent.com/seebi/cimd/refs/heads/main/docs/ui-example-v0.8.2.png "UI Example")
 
 ### Command Line Tool
 
