@@ -220,7 +220,7 @@ The proposed JSON structure is formalized as a [JSON Schema](https://json-schema
 
 [userscript-github]: https://github.com/seebi/cimd/blob/main/js/
 
-[schema-app]: https://json-schema-viewer.vercel.app/view?url=https%3A%2F%2Fgitlab.com%2Fseebi%2Fgitlab-pipeline-metadata%2F-%2Fraw%2Fmain%2Fschema%2Fschema.json&description_is_markdown=on&expand_buttons=on&show_breadcrumbs=on&show_toc=on&with_footer=on&template_name=js#items_pattern1
+[schema-app]: https://json-schema-viewer.vercel.app/view?url=https://raw.githubusercontent.com/seebi/cimd/refs/heads/main/schema/schema.json&description_is_markdown=on&expand_buttons=on&show_breadcrumbs=on&show_toc=on&with_footer=on&template_name=js#items_pattern1
 [schema-github]: https://github.com/seebi/cimd/blob/main/schema/schema.json
 [example-pipeline]: https://gitlab.com/seebi/gitlab-pipeline-metadata/-/blob/main/.gitlab-ci.yml?ref_type=eb2b4498
 [cimd-greasyfork]: https://greasyfork.org/en/scripts/530296-gitlab-pipeline-metadata-via-cimd
