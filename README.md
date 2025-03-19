@@ -27,12 +27,12 @@
 
 ## Badges
 
-![Code and License][code-and-license] [![license-shield]][license-link] [![ruff][ruff-shield]][ruff-link] [![mypy][mypy-shield]][mypy-link]
-![Github Stats][github-stats] [![Github Issues][issues-shield]][issues-link] [![Github Action][action-shield]][action-link] [![Github Commits][commit-activity-shield]][commit-activity-link]
-![User Script][userscript] [![Greasy Fork Entry][greasyfork-shield]][cimd-greasyfork] [![Sources][js-source-shield]][userscript-github]
-![Python Package][python-package] [![pypi-version][pypi-version-shield]][pypi-link] [![pypi-version][pypi-downloads-shield]][pypi-link] [![python-versions][python-versions-shield]][pypi-link]
-![Docker Image:][docker-image] [![docker][docker-pulls-shield]][docker-link] [![docker][docker-size-shield]][docker-link] [![Base Image][base-image-shield]][base-image-link]
-![Used Tools:][used-tools] [![poetry][poetry-shield]][poetry-link] [![copier][copier-shield]][copier] [![task][task-shield]][task-link]
+![Code and License][code-and-license] [![license-shield]][license-link] [![ruff][ruff-shield]][ruff-link] [![mypy][mypy-shield]][mypy-link]<br />
+![Github Stats][github-stats] [![Github Issues][issues-shield]][issues-link] [![Github Action][action-shield]][action-link] [![Github Commits][commit-activity-shield]][commit-activity-link]<br />
+![User Script][userscript] [![Greasy Fork Entry][greasyfork-shield]][cimd-greasyfork] [![Sources][js-source-shield]][userscript-github]<br />
+![Python Package][python-package] [![pypi-version][pypi-version-shield]][pypi-link] [![pypi-version][pypi-downloads-shield]][pypi-link] [![python-versions][python-versions-shield]][pypi-link]<br />
+![Docker Image:][docker-image] [![docker][docker-pulls-shield]][docker-link] [![docker][docker-size-shield]][docker-link] [![Base Image][base-image-shield]][base-image-link]<br />
+![Used Tools:][used-tools] [![poetry][poetry-shield]][poetry-link] [![copier][copier-shield]][copier] [![task][task-shield]][task-link]<br />
 
 ## Motivation
 
@@ -49,13 +49,17 @@ The basic idea of this project is to prepare and provide metadata artifacts on a
 
 ### Frontend
 
-The frontend is available as a single JavaScript file in the [js folder][userscript-github]. It is currently tested with Tampermonkey on Google Chrome only 🙈. Once activated, it will extend the pipeline view of your ![cmid metadata enabled][cmid-metadata-enabled] GitLab project with a metadata column, showing the items (example below).
+The frontend is available as a single JavaScript file in the [js folder][userscript-github].
+It is currently tested with Tampermonkey on Google Chrome only 🙈.
+Once activated, it will extend the pipeline view of your ![cmid metadata enabled][cmid-metadata-enabled] GitLab project with a metadata column, showing the items (example below).
 
 ![UI Example](docs/ui-example-v0.8.2.png "UI Example")
 
 ### Command Line Tool
 
-The CLI is used to prepare and manipulate metadata items in a `__metadata__.json` document. It has the following features:
+The CLI is used to prepare and manipulate metadata items in a `__metadata__.json` document.
+
+It has the following features:
 
 - commands for basic CRUD operations:
   - `add` - add a metadata item
@@ -213,3 +217,4 @@ The proposed JSON structure is formalized as a [JSON Schema](https://json-schema
 [cimd-greasyfork]: https://greasyfork.org/en/scripts/530296-gitlab-pipeline-metadata-via-cimd
 
 [cmid-metadata-enabled]: https://img.shields.io/badge/%7Bcimd%7D-metadata_enabled-gray?labelColor=orange
+
