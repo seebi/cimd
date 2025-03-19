@@ -67,6 +67,7 @@ It has the following features:
   - `get` - get data of a metadata item
   - `list` - list metadata items
 - `extract` command group, which collects commands to extract metadata items from different sources:
+  - `coverage-xml` - extract metadata from a Coverage XML output files
   - `junit-xml` - extract metadata from JUnit XML output files
   - `pipeline-logs` - extract metadata from gitlab pipeline job logs
   - `trivy-scan` - extract metadata from Trivy scan JSON output files
@@ -87,7 +88,7 @@ After installation, feel free to go to the example pipeline list at [gitlab.com/
 
 ### Command Line Tool
 
-To install and use the **cimd command line interface**, you can use use all the ways the python ecosystem provides to you:
+To install and use the **cimd command line interface**, you have all the options the python ecosystem provides:
 
 - Recommended ... via [pipx](https://pipx.pypa.io/stable/)
 
@@ -101,10 +102,10 @@ To install and use the **cimd command line interface**, you can use use all the 
   uvx cimd
   ```
 
-- There is also a docker image ...
+- There is also a [docker image][docker-link] ...
 
   ``` shell
-  docker run -i -t --rm seebi/cimd
+  docker run -i -t --rm -v $(pwd):/data seebi/cimd
   ```
 
 ## Development
@@ -227,3 +228,4 @@ The proposed JSON structure is formalized as a [JSON Schema](https://json-schema
 
 [cmid-metadata-enabled]: https://img.shields.io/badge/%7Bcimd%7D-metadata_enabled-gray?labelColor=orange
 [example-pipeline-list]: https://gitlab.com/seebi/gitlab-pipeline-metadata/-/pipelines
+

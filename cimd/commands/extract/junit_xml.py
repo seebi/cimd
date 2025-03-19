@@ -17,11 +17,11 @@ COLORS = {
 }
 
 
-def image_for_junit_key(key: str, count: int) -> str:
+def image_for_junit_key(key: str, count: int) -> ShieldsLink:
     """Create a shields.io image for a junit key"""
     key = key.upper()
     color = COLORS.get(key, "blue")
-    return ShieldsLink(label=f"Tests {key.title()}", message=f"{count!s}", color=color).to_string()
+    return ShieldsLink(label=f"Tests {key.title()}", message=f"{count!s}", color=color)
 
 
 @click.command(name="junit-xml")
@@ -63,6 +63,6 @@ def junit_xml_command(app: ApplicationContext, xml_file: str, replace: bool) -> 
             value=str(count),
             label=f"Tests {_.title()}",
             description=f"JUnit count of {_} tests ({xml_file})",
-            image=image_for_junit_key(key=_, count=count),
+            image=image_for_junit_key(key=_, count=count).to_string(),
         )
         app.add_item(key=key, item=new_item, replace=replace)

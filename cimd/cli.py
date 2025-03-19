@@ -5,7 +5,7 @@ import click
 from cimd.classes import context
 from cimd.commands import add, delete, get, list
 from cimd.commands.extend import gitlab_link
-from cimd.commands.extract import junit_xml, pipeline_logs, trivy_scans
+from cimd.commands.extract import coverage_xml, junit_xml, pipeline_logs, trivy_scans
 
 
 @click.group(context_settings={"auto_envvar_prefix": "CIMD", "help_option_names": ["-h", "--help"]})
@@ -43,6 +43,7 @@ cli.add_command(extend_group)
 extract_group.add_command(pipeline_logs.pipeline_logs_command)
 extract_group.add_command(trivy_scans.trivy_scan_command)
 extract_group.add_command(junit_xml.junit_xml_command)
+extract_group.add_command(coverage_xml.coverage_xml_command)
 cli.add_command(extract_group)
 
 cli.add_command(add.add_command)
