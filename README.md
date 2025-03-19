@@ -51,7 +51,7 @@ The basic idea of this project is to prepare and provide metadata artifacts on a
 
 The frontend is available as a single JavaScript file in the [js folder][userscript-github].
 It is currently tested with Tampermonkey on Google Chrome only 🙈.
-Once activated, it will extend the pipeline view of your ![cmid metadata enabled][cmid-metadata-enabled] GitLab project with a metadata column, showing the items (screenshot example below).
+Once activated, it will extend the pipeline view of your [![cmid metadata enabled][cmid-metadata-enabled]][cmid-metadata-enabled] GitLab project with a metadata column, showing the items (screenshot example below).
 
 ![UI Example](docs/ui-example-v0.8.2.png "UI Example")
 
