@@ -1,8 +1,16 @@
+<!-- markdownlint-disable MD012 MD013 MD024 MD033 -->
 # Change Log
 
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/)
+
+## [0.9.1] 2025-03-19
+
+### Fixed
+
+- fix README for pypi.org
+
 
 ## [0.9.0] 2025-03-19
 
@@ -15,6 +23,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - shields.io API: proper handling of spaces
 
+
 ## [0.8.2] 2025-03-18
 
 ### Fixed
@@ -22,12 +31,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - `extend gitlab-link` command:
   - correct handling of job URL parts
 
+
 ## [0.8.1] 2025-03-17
 
 ### Fixed
 
 - `extend gitlab-link` command:
   - exception when using `CI_JOB_URL` environment variable
+
 
 ## [0.8.0] 2025-03-17
 
@@ -41,6 +52,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - `delete` command:
   - key argument now a key expression argument, to allow deletion of multiple items
 
+
 ## [0.7.0] 2025-03-17
 
 ### Added
@@ -53,11 +65,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - even extraction of zero keys will result in a metadata file
 
+
 ## [0.6.2] 2025-02-05
 
 ### Added
 
 - docker image available: [`seebi/cimd`](https://hub.docker.com/repository/docker/seebi/cimd/)
+
 
 ## [0.6.1] 2025-02-04
 
@@ -65,6 +79,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - `extract trivy-scan` command:
   - model error on empty results and vulnerabilities list
+
 
 ## [0.6.0] 2025-02-04
 
@@ -79,6 +94,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - `scratch` command group
   - rename to `extract`
 
+
 ## [0.5.1] 2025-01-04
 
 ### Added
@@ -91,3 +107,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
   - `list` - List metadata items.
 - `scratch` command group:
   - `pipeline-logs` command - extract metadata from gitlab pipeline job logs.
+
