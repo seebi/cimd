@@ -27,12 +27,12 @@
 
 ## Badges
 
-![Code and License][code-and-license] [![license-shield]][license-link] [![ruff][ruff-shield]][ruff-link] [![mypy][mypy-shield]][mypy-link]<br />
-![Github Stats][github-stats] [![Github Issues][issues-shield]][issues-link] [![Github Action][action-shield]][action-link] [![Github Commits][commit-activity-shield]][commit-activity-link]<br />
 ![User Script][userscript] [![Greasy Fork Entry][greasyfork-shield]][cimd-greasyfork] [![Sources][js-source-shield]][userscript-github]<br />
 ![Python Package][python-package] [![pypi-version][pypi-version-shield]][pypi-link] [![pypi-version][pypi-downloads-shield]][pypi-link] [![python-versions][python-versions-shield]][pypi-link]<br />
 ![Docker Image:][docker-image] [![docker][docker-pulls-shield]][docker-link] [![docker][docker-size-shield]][docker-link] [![Base Image][base-image-shield]][base-image-link]<br />
 ![Used Tools:][used-tools] [![poetry][poetry-shield]][poetry-link] [![copier][copier-shield]][copier] [![task][task-shield]][task-link]<br />
+![Code and License][code-and-license] [![license-shield]][license-link] [![ruff][ruff-shield]][ruff-link] [![mypy][mypy-shield]][mypy-link]<br />
+![Github Stats][github-stats] [![Github Issues][issues-shield]][issues-link] [![Github Action][action-shield]][action-link] [![Github Commits][commit-activity-shield]][commit-activity-link]<br />
 
 ## Motivation
 
