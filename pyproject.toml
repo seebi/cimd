@@ -7,7 +7,7 @@ authors = ["Sebastian Tramp <mail@sebastian.tramp.name>"]
 classifiers = [
     "Development Status :: 4 - Beta",
 ]
-readme = "README-public.md"
+readme = "README.md"
 
 homepage = "https://github.com/seebi/cimd"
 
