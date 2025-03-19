@@ -211,12 +211,12 @@ The proposed JSON structure is formalized as a [JSON Schema](https://json-schema
 [greasyfork-shield]: https://img.shields.io/badge/Greasy_Fork-Available-black?labelColor=darkred&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3ggEBCQHM3fXsAAAAVdJREFUOMudkz2qwkAUhc/goBaGJBgUtBCZyj0ILkpwAW7Bws4yO3AHLiCtEFD8KVREkoiFxZzX5A2KGfN4F04zMN+ce+5c4LMUgDmANYBnrnV+plBSi+FwyHq9TgA2LQpvCiEiABwMBtzv95RSfoNEHy8DYBzHrNVqVEr9BWKcqNFoxF6vx3a7zc1mYyC73a4MogBg7vs+z+czO50OW60Wt9stK5UKp9Mpj8cjq9WqDTBHnjAdxzGQZrPJw+HA31oulzbAWgLoA0CWZVBKIY5jzGYzdLtdE9DlcrFNrY98zobqOA6TJKHW2jg4nU5sNBpFDp6mhVe5rsvVasUwDHm9Xqm15u12o+/7Hy0gD8KatOd5vN/v1FozTVN6nkchxFuI6hsAAIMg4OPxMJCXdtTbR7JJCMEgCJhlGUlyPB4XfumozInrupxMJpRSRtZlKoNYl+m/6/wDuWAjtPfsQuwAAAAASUVORK5CYII=
 [js-source-shield]: https://img.shields.io/badge/GitHub-Source-blue?logo=Javascript
 
-[code-and-license]: https://img.shields.io/badge/Code_and_License_%3E-gray
-[github-stats]: https://img.shields.io/badge/Github_Stats_%3E%3E%3E%3E-gray
-[userscript]: https://img.shields.io/badge/Frontend_Script_%3E%3E-gray
-[python-package]: https://img.shields.io/badge/Python_Package_%3E%3E-gray
-[docker-image]: https://img.shields.io/badge/Docker_Image_%3E%3E%3E-gray
-[used-tools]: https://img.shields.io/badge/Used_Tools_%3E%3E%3E%3E%3E-gray
+[code-and-license]: https://img.shields.io/badge/Code_and_License_%3E-gray?color=white
+[github-stats]: https://img.shields.io/badge/Github_Stats_%3E%3E%3E%3E-gray?color=white
+[userscript]: https://img.shields.io/badge/Frontend_Script_%3E%3E-gray?color=white
+[python-package]: https://img.shields.io/badge/Python_Package_%3E%3E-gray?color=white
+[docker-image]: https://img.shields.io/badge/Docker_Image_%3E%3E%3E-gray?color=white
+[used-tools]: https://img.shields.io/badge/Used_Tools_%3E%3E%3E%3E%3E-gray?color=white
 
 [userscript-github]: https://github.com/seebi/cimd/blob/main/js/
 
