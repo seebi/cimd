@@ -36,11 +36,11 @@
 
 ## Motivation
 
-To provide a fast overview of recent pipelines in a GitLab-managed repository, this project provides the backend and frontend capabilities to extend the GitLab pipeline list with a custom metadata column.
+To enable a fast overview of recent pipelines and their metadata in a GitLab-managed repository, this project provides the backend and frontend capabilities to extend the GitLab pipeline list with a custom metadata column.
 
 GitLab already has some metadata mechanisms (e.g. [coverage patterns](https://docs.gitlab.com/ee/ci/testing/code_coverage.html#test-coverage-examples)), but they are limited to a specific scope.
 
-The basic idea of this project is to prepare and provide metadata artifacts on a well-known position, which can be easily fetched and parsed by a custom user script to extend the pipeline list with metadata item representations.
+The basic idea of this project is to prepare and provide extensible metadata artifacts on a well-known position, which can be easily fetched and parsed by a custom user script to extend the pipeline list with metadata item representations.
 
 
 ## Features
