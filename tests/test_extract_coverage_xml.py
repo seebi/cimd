@@ -39,7 +39,6 @@ def test_color(line_rate: float, color: str) -> None:
     assert image_for_line_rate_item(line_rate=line_rate).color == color
 
 
-@pytest.mark.usefixtures("new_dir")
 def test_success(fixture_data: FixtureData) -> None:
     """Test success"""
     assert run(command=("list", "--keys-only")).line_count == 0
@@ -48,7 +47,6 @@ def test_success(fixture_data: FixtureData) -> None:
     assert run(command=("get", "coverage-py-line-rate")).lines[0] == str(fixture_data.line_rate)
 
 
-@pytest.mark.usefixtures("new_dir")
 def test_fail() -> None:
     """Test fail"""
     assert run(command=("list", "--keys-only")).line_count == 0

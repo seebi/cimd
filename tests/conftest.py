@@ -8,7 +8,7 @@ from typing import Any
 import pytest
 
 
-@pytest.fixture
+@pytest.fixture(autouse=True)
 def new_dir(tmp_path: Path) -> Generator[Path, Any, None]:
     """Provide new test directory"""
     current_directory = Path.cwd()

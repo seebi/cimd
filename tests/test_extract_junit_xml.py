@@ -28,7 +28,6 @@ def fixture_data() -> FixtureData:
     )
 
 
-@pytest.mark.usefixtures("new_dir")
 def test_success(fixture_data: FixtureData) -> None:
     """Test success"""
     assert run(command=("list", "--keys-only")).line_count == 0
@@ -38,7 +37,6 @@ def test_success(fixture_data: FixtureData) -> None:
         assert run(command=("get", key)).lines[0] == str(value)
 
 
-@pytest.mark.usefixtures("new_dir")
 def test_fail() -> None:
     """Test fail"""
     assert run(command=("list", "--keys-only")).line_count == 0

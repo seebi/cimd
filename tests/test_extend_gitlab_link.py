@@ -1,6 +1,5 @@
 """Test extend gitlab-link command"""
 
-import pytest
 from _pytest.monkeypatch import MonkeyPatch
 
 from tests import run, run_asserting_error
@@ -15,7 +14,6 @@ def test_fails() -> None:
     )
 
 
-@pytest.mark.usefixtures("new_dir")
 def test_with_env(monkeypatch: MonkeyPatch) -> None:
     """Test extend gitlab-link command with environment variables"""
     extend_cmd = ["extend", "gitlab-link", "--artifact-path", "dir/file", "--key", "key"]
@@ -35,7 +33,6 @@ def test_with_env(monkeypatch: MonkeyPatch) -> None:
     run(["get", "key", "link"])
 
 
-@pytest.mark.usefixtures("new_dir")
 def test_url_generation() -> None:
     """Test update links - url generation"""
     extend_cmd = [
@@ -57,7 +54,6 @@ def test_url_generation() -> None:
     assert run(command=("get", "key", "link")).lines[0] == url
 
 
-@pytest.mark.usefixtures("new_dir")
 def test_success() -> None:
     """Test update links - successful commands"""
     extend_cmd = [

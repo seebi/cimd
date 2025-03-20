@@ -33,7 +33,6 @@ def fixture_data() -> Generator[FixtureData, Any, None]:
     chdir(current_dir)
 
 
-@pytest.mark.usefixtures("new_dir")
 def test_basic_crud(fixture_data: FixtureData) -> None:
     """Test basic CRUD"""
     _ = fixture_data
@@ -52,7 +51,6 @@ def test_basic_crud(fixture_data: FixtureData) -> None:
     run_asserting_error(command=("delete", "["), match="Invalid regular expression")
 
 
-@pytest.mark.usefixtures("new_dir")
 def test_optional_data_and_get(fixture_data: FixtureData) -> None:
     """Test optional data and get"""
     _ = fixture_data
@@ -73,7 +71,6 @@ def test_optional_data_and_get(fixture_data: FixtureData) -> None:
     assert run(command=("get", _.key1, "link")).lines[0] == _.link1
 
 
-@pytest.mark.usefixtures("new_dir")
 def test_table_list(fixture_data: FixtureData) -> None:
     """Test table list"""
     _ = fixture_data

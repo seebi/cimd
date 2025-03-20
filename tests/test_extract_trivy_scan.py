@@ -1,10 +1,6 @@
 """Test extract trivy-scan command"""
 
-import os
-from collections.abc import Generator
 from dataclasses import dataclass
-from pathlib import Path
-from typing import Any
 
 import pytest
 
@@ -32,15 +28,11 @@ class FixtureData:
 
 
 @pytest.fixture
-def fixture_data(tmp_path: Path) -> Generator[FixtureData, Any, None]:
+def fixture_data() -> FixtureData:
     """Provide TestSetup"""
-    current_directory = Path.cwd()
-    os.chdir(tmp_path)
-    yield FixtureData(
+    return FixtureData(
         counts=COUNTS,
     )
-    # switch back to original directory
-    os.chdir(current_directory)
 
 
 @pytest.mark.parametrize("filename", COUNTS.keys())
