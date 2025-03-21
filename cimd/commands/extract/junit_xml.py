@@ -9,6 +9,8 @@ from cimd.classes.context import ApplicationContext
 from cimd.classes.metadata import Item
 from cimd.classes.shields_link import ShieldsLink
 
+COMMAND_AND_PREFIX = "junit-xml"
+
 COLORS = {
     "FAILURES": "red",
     "ERRORS": "orange",
@@ -58,7 +60,7 @@ def junit_xml_command(app: ApplicationContext, xml_file: str, replace: bool) -> 
     }
     for _ in counter:
         count = counter.get(_, 0)
-        key = f"junit-xml-{_.lower()}"
+        key = f"{COMMAND_AND_PREFIX}-{_.lower()}"
         new_item = Item(
             value=str(count),
             label=f"Test {_.title()}",

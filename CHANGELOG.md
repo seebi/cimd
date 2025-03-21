@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/)
 
-## [0.11.0] 2025-03-xx
+## [0.11.0] 2025-03-21
 
 ### Added
 
@@ -14,6 +14,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
   - option `--field` to optionally change the target of the expression pattern
 - `extend gitlab-link` command:
   - option `--field` to optionally change the target of the expression pattern
+
+### Changed
+
+- `extend coverage-xml` command:
+  - item key now `coverage-xml-line-rate`
 
 
 ## [0.10.1] 2025-03-21

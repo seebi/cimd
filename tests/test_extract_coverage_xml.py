@@ -44,7 +44,7 @@ def test_success(fixture_data: FixtureData) -> None:
     assert run(command=("list", "--keys-only")).line_count == 0
     run(command=("extract", "coverage-xml", fixture_data.filepath))
     assert run(command=("list", "--keys-only")).line_count == 1
-    assert run(command=("get", "coverage-py-line-rate")).lines[0] == str(fixture_data.line_rate)
+    assert run(command=("get", "coverage-xml-line-rate")).lines[0] == str(fixture_data.line_rate)
 
 
 def test_fail() -> None:

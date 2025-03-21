@@ -9,6 +9,8 @@ from cimd.classes.context import ApplicationContext
 from cimd.classes.metadata import Item
 from cimd.classes.shields_link import ShieldsLink
 
+COMMAND_AND_PREFIX = "trivy-scan"
+
 COLORS = {
     "CRITICAL": "red",
     "HIGH": "orange",
@@ -56,7 +58,7 @@ def image_for_severity_count(severity: str, count: int) -> str:
     return ShieldsLink(label=severity, message=str(count), color=color, logo="trivy").to_string()
 
 
-@click.command(name="trivy-scan")
+@click.command(name=COMMAND_AND_PREFIX)
 @click.argument(
     "JSON_FILE",
     type=click.Path(exists=True, dir_okay=False, file_okay=True, readable=True, resolve_path=True),
@@ -96,7 +98,7 @@ def trivy_scan_command(
         severities = list(set(severities))
     for _ in severities:
         count = counter.get(_, 0)
-        key = f"trivy-scan-{_.lower()}"
+        key = f"{COMMAND_AND_PREFIX}-{_.lower()}"
         new_item = Item(
             value=str(count),
             label=_,
