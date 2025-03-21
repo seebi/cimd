@@ -61,8 +61,8 @@ def junit_xml_command(app: ApplicationContext, xml_file: str, replace: bool) -> 
         key = f"junit-xml-{_.lower()}"
         new_item = Item(
             value=str(count),
-            label=f"Tests {_.title()}",
-            description=f"JUnit count of {_} tests ({xml_file})",
+            label=f"Test {_.title()}",
+            description=f"Sum of all test cases (over all parsed files) which are {_}",
             image=image_for_junit_key(key=_, count=count).to_string(),
         )
         app.add_item(key=key, item=new_item, replace=replace)
