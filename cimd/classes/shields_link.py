@@ -1,5 +1,7 @@
 """shields.io link"""
 
+from urllib.parse import quote
+
 
 class ShieldsLink:
     """shields.io link"""
@@ -29,24 +31,23 @@ class ShieldsLink:
         self.base = base
 
     @staticmethod
-    def _replace_chars(value: str) -> str:
-        """Replace some chars
+    def _quote_path(value: str) -> str:
+        """Replace some chars, then url path quote
 
         - "_" -> "__"
         - "-" -> "--"
-        - " " -> "%20"
 
         """
         value = value.replace("_", "__")
         value = value.replace("-", "--")
-        value = value.replace(" ", "%20")
+        value = quote(value, safe="/", encoding=None, errors=None)
         return value  # noqa: RET504
 
     @property
     def label(self) -> str | None:
         """Optional part: label-message-color"""
         if self._label:
-            return self._replace_chars(self._label)
+            return self._quote_path(self._label)
         return None
 
     @label.setter
@@ -55,7 +56,7 @@ class ShieldsLink:
 
     def to_string(self) -> str:
         """Create URL string"""
-        path = self._replace_chars(self.message)
+        path = self._quote_path(self.message)
         if self.label:
             path = f"{self.label}-{path}"
         path = f"{path}-{self.color}"

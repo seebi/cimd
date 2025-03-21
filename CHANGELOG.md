@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/)
 
+## [0.11.1] 2025-03-21
+
+### Fixed
+
+- shields.io API: missing path encoding of special chars (e.g. %)
+
+
 ## [0.11.0] 2025-03-21
 
 ### Added
