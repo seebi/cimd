@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/)
 
+## [0.11.0] 2025-03-xx
+
+### Added
+
+- `--version` root option to show the version and exit
+
+
 ## [0.10.1] 2025-03-21
 
 ### Fixed
@@ -12,12 +19,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - `extract junit-xml` command:
   - fix description of extracted items
 
+
 ## [0.10.0] 2025-03-20
 
 ### Added
 
 - `extract coverage-xml` command:
-  - Extract metadata from a Coverage XML output files.
+  - Extract metadata from a Coverage XML output files
+
 
 ## [0.9.1] 2025-03-19
 
@@ -31,7 +40,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 
 - `extract junit-xml` command:
-  - Extract metadata from a JUnit XML output files.
+  - Extract metadata from a JUnit XML output files
 
 ### Fixed
 
@@ -59,7 +68,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 
 - `extend` command group:
-  - `gitlab-link` command - extend metadata items with a raw gitlab artifact link.
+  - `gitlab-link` command - extend metadata items with a raw gitlab artifact link
 
 ### Changed
 
@@ -115,10 +124,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - initial version
 - basic crud commands:
-  - `add` - Add a metadata item.
-  - `delete` - Delete metadata items.
-  - `get` - Get data of a metadata item.
-  - `list` - List metadata items.
+  - `add` - Add a metadata item
+  - `delete` - Delete metadata items
+  - `get` - Get data of a metadata item
+  - `list` - List metadata items
 - `scratch` command group:
-  - `pipeline-logs` command - extract metadata from gitlab pipeline job logs.
+  - `pipeline-logs` command - extract metadata from gitlab pipeline job logs
 

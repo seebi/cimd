@@ -1,5 +1,8 @@
 """cli"""
 
+from importlib.metadata import version
+from sys import version_info
+
 import click
 
 from cimd.classes import context
@@ -18,6 +21,11 @@ from cimd.commands.list import list_command
     help="The used metadata JSON file.",
     default="__metadata__.json",
     show_default=True,
+)
+@click.version_option(
+    version=version("cimd"),
+    message="%(prog)s %(version)s "
+    f"(Python {version_info.major}.{version_info.minor}.{version_info.micro})",
 )
 @click.option("--debug", "-d", is_flag=True, help="Enable output of debug information.")
 @click.pass_context
