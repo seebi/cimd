@@ -17,7 +17,7 @@ class ApplicationContext:
     def __init__(self, filename: str, debug: bool):
         self.debug = debug
         self.filename = Path(filename)
-        self.file = self.load_file()
+        self.file: File = self.load_file()
 
     def echo_debug(self, message: str) -> None:
         """Output a debug message if --debug is enabled."""

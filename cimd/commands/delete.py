@@ -2,28 +2,31 @@
 
 import click
 
-from cimd.callbacks import filter_items_with_expression
 from cimd.classes.context import ApplicationContext
-from cimd.classes.metadata import Item
+from cimd.classes.metadata import ITEM_FIELDS
 
 
 @click.command(name="delete")
 @click.argument(
-    "KEY_EXPRESSION",
-    callback=filter_items_with_expression,
+    "PATTERN",
+)
+@click.option(
+    "--field",
+    type=click.Choice(ITEM_FIELDS),
+    default="key",
+    help="On which field the pattern has to match.",
 )
 @click.pass_obj
 def delete_command(
     app: ApplicationContext,
-    key_expression: dict[str, Item],
+    pattern: str,
+    field: str,
 ) -> None:
     """Delete metadata items.
 
-    This command deletes metadata items based on a key-expression.
-    This regular expression needs to fully match a key in order to delete the item.
+    This command deletes metadata items based on a regular expression.
+    This regular expression needs to fully match a key
+    (or optionally another field) in order to delete the item.
     """
-    filtered_items = key_expression  # click does not allow aliases for arguments
-    if len(filtered_items) == 0:
-        raise click.UsageError("No items matching this expression.")
-    for key in filtered_items:
+    for key in app.file.get_filtered_items(pattern=pattern, field=field):
         app.delete_item(key=key)

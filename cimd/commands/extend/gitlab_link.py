@@ -4,9 +4,8 @@ import os
 
 import click
 
-from cimd.callbacks import filter_items_with_expression
 from cimd.classes.context import ApplicationContext
-from cimd.classes.metadata import Item
+from cimd.classes.metadata import ITEM_FIELDS
 
 
 def get_job_url(ctx: click.core.Context, param: click.Option, value: str | None) -> str:  # noqa: ARG001
@@ -24,12 +23,14 @@ def get_job_url(ctx: click.core.Context, param: click.Option, value: str | None)
 
 
 @click.command(name="gitlab-link")
+@click.argument(
+    "PATTERN",
+)
 @click.option(
-    "--key",
-    "filtered_items",
-    callback=filter_items_with_expression,
-    help="Regular expression to specify, which keys you want to update.",
-    required=True,
+    "--field",
+    type=click.Choice(ITEM_FIELDS),
+    default="key",
+    help="On which field the pattern has to match.",
 )
 @click.option(
     "--job-url",
@@ -47,10 +48,13 @@ def get_job_url(ctx: click.core.Context, param: click.Option, value: str | None)
 )
 @click.pass_obj
 def gitlab_link_command(
-    app: ApplicationContext, filtered_items: dict[str, Item], job_url: str, artifact_path: str
+    app: ApplicationContext, pattern: str, field: str, job_url: str, artifact_path: str
 ) -> None:
-    """Extend metadata items with a raw gitlab artifact link."""
+    """Extend metadata items with a raw gitlab artifact link.
+
+    To select the items you want to extend, a pattern + an optional field can be used.
+    """
     artifact_path = artifact_path.strip("/")
-    for key, item in filtered_items.items():
+    for key, item in app.file.get_filtered_items(pattern=pattern, field=field).items():
         item.link = f"{job_url}/artifacts/raw/{artifact_path}"
         app.add_item(key=key, item=item, replace=True)

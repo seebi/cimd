@@ -7,7 +7,7 @@ from tests import run, run_asserting_error
 
 def test_fails() -> None:
     """Test failing commands"""
-    extend_cmd = ["extend", "gitlab-link", "--artifact-path", "dir/file", "--key", "ttt"]
+    extend_cmd = ["extend", "gitlab-link", "--artifact-path", "dir/file", "ttt"]
     run_asserting_error(
         command=extend_cmd,
         match="Either use the --job option or set the CI_JOB_URL environment variable.",
@@ -16,7 +16,7 @@ def test_fails() -> None:
 
 def test_with_env(monkeypatch: MonkeyPatch) -> None:
     """Test extend gitlab-link command with environment variables"""
-    extend_cmd = ["extend", "gitlab-link", "--artifact-path", "dir/file", "--key", "key"]
+    extend_cmd = ["extend", "gitlab-link", "--artifact-path", "dir/file", "key"]
     assert run(command=("list", "--keys-only")).line_count == 0
     assert run(command=("add", "key", "value"))
     assert run(command=("list", "--keys-only")).line_count == 1
@@ -40,7 +40,6 @@ def test_url_generation() -> None:
         "gitlab-link",
         "--artifact-path",
         "dir/file",
-        "--key",
         "key",
         "--job-url",
     ]
@@ -63,7 +62,6 @@ def test_success() -> None:
         "https:/example.org/",
         "--artifact-path",
         "dir/file",
-        "--key",
     ]
     url = "https:/example.org/artifacts/raw/dir/file"
     items = [("key", "value"), ("key2", "value2"), ("key3", "value3")]

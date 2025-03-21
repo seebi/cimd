@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 
 - `--version` root option to show the version and exit
+- `delete` command:
+  - option `--field` to optionally change the target of the expression pattern
+- `extend gitlab-link` command:
+  - option `--field` to optionally change the target of the expression pattern
 
 
 ## [0.10.1] 2025-03-21

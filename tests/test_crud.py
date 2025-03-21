@@ -44,10 +44,10 @@ def test_basic_crud(fixture_data: FixtureData) -> None:
     run_asserting_error(command=("add", _.key1, _.value1), match="already exists in file")
     run(command=("add", _.key1, _.value1, "--label", _.label1, "--replace"))
     assert run(command=("list", "--keys-only")).line_count == 1
-    run_asserting_error(command=("delete", "unknown"), match="No items matching this expression")
+    run_asserting_error(command=("delete", "unknown"), match="No items matching")
     run(command=("delete", _.key1))
     assert run(command=("list", "--keys-only")).line_count == 0
-    run_asserting_error(command=("delete", _.key1), match="No items matching this expression")
+    run_asserting_error(command=("delete", _.key1), match="No items matching")
     run_asserting_error(command=("delete", "["), match="Invalid regular expression")
 
 
