@@ -13,15 +13,19 @@
 </p>
 
 <p align="center">
-  <a href="#motivation">Motivation</a>
-  ·
-  <a href="#features">Features</a>
-  ·
-  <a href="#installation">Installation</a>
-  ·
-  <a href="#development">Development</a>
-  ·
-  <a href="#specification">Specification</a>
+  <a href="#motivation">🤓 Motivation</a>
+  ···
+  <a href="#features">🚀 Features</a>
+  ···
+  <a href="#installation">⚙️ Installation</a>
+</p>
+
+<p align="center">
+  <a href="#development">🐍 Development</a>
+  ···
+  <a href="#specification">📄 Specification</a>
+  ···
+  <a href="#similar-projects">ℹ️  Similar Project</a>
 
 </p>
 
@@ -40,7 +44,7 @@ To enable a fast overview of recent pipelines and their metadata in a GitLab-man
 
 GitLab already has some metadata mechanisms (e.g. [coverage patterns](https://docs.gitlab.com/ee/ci/testing/code_coverage.html#test-coverage-examples)), but they are limited to a specific scope.
 
-The basic idea of this project is to prepare and provide extensible metadata artifacts on a well-known position, which can be easily fetched and parsed by a custom user script to extend the pipeline list with metadata item representations.
+The basic idea of this project is to prepare and provide extensible metadata artefacts on a well-known position, which can be easily fetched and parsed by a custom user script to extend the pipeline list with metadata item representations.
 
 
 ## Features
@@ -148,7 +152,7 @@ In addition to that, the following optional keys can be used for a metadata item
 {
     "items": {
         "coverage": {
-            "value": "87%",
+            "value": "87",
             "comment": "'value' is the only mandatory key of a metadata item."
         },
         "jobs": {
@@ -180,6 +184,13 @@ Hereinafter you will find some comments on the optional field:
 ### Schema
 
 The proposed JSON structure is formalized as a [JSON Schema](https://json-schema.org/) which is available at [schema/schema.json][schema-github] or can be visualized in the [json-schema-viewer@vercel.app][schema-app].
+
+
+## Similar Projects
+
+[💬 Drop me a note](https://github.com/seebi/cimd/issues/new) if you miss a project here ...
+
+- [github-action-benchmark](https://github.com/benchmark-action/github-action-benchmark) - is a GitHub Action for continuous benchmarking to keep performance
 
 
 [poetry-link]: https://python-poetry.org/
