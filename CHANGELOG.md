@@ -9,7 +9,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Changed
 
-- tables are rendered by rich now
+- tables are rendered by rich now (#2)
+
+### Fixed
+
+- list command does not create zero-item JSON files anymore (#3)
 
 
 ## [0.11.1] 2025-03-21

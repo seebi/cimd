@@ -50,6 +50,7 @@ def test_success(fixture_data: FixtureData) -> None:
 def test_fail() -> None:
     """Test fail"""
     assert run(command=("list", "--keys-only")).line_count == 0
+    run(command=("add", "key", "value"))
     run_asserting_error(
         command=("extract", "coverage-xml", "__metadata__.json"), match="not well-formed"
     )

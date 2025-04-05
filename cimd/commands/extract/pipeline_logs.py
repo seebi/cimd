@@ -115,3 +115,4 @@ def pipeline_logs_command(  # noqa: PLR0913
             if match and match.group("key") and match.group("value"):
                 new_item = Item(value=match.group("value"))
                 app.add_item(key=match.group("key"), item=new_item, replace=replace)
+    app.save_file()

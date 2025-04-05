@@ -106,3 +106,4 @@ def trivy_scan_command(
             image=image_for_severity_count(severity=_, count=count),
         )
         app.add_item(key=key, item=new_item, replace=replace)
+    app.save_file()

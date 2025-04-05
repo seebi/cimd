@@ -60,7 +60,7 @@ class ApplicationContext:
     def load_file(self) -> File:
         """Load metadata from path"""
         if not self.filename.exists():
-            self.filename.write_text(File().model_dump_json(exclude_none=True, indent=2))
+            return File()
         with self.filename.open("r") as file_reader:
             content = json.load(file_reader)
             return File(**content)
