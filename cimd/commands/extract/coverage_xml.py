@@ -68,3 +68,4 @@ def coverage_xml_command(app: ApplicationContext, xml_file: str, replace: bool) 
         image=image_for_line_rate_item(line_rate=line_rate).to_string(),
     )
     app.add_item(key=key, item=new_item, replace=replace)
+    app.save_file()

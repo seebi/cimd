@@ -68,3 +68,4 @@ def junit_xml_command(app: ApplicationContext, xml_file: str, replace: bool) -> 
             image=image_for_junit_key(key=_, count=count).to_string(),
         )
         app.add_item(key=key, item=new_item, replace=replace)
+    app.save_file()
