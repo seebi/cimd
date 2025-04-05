@@ -1,5 +1,6 @@
 """tests"""
 
+import os
 import time
 from pathlib import Path
 
@@ -41,6 +42,7 @@ class AnnotatedResult:
 
 def _run(command: tuple[str, ...] | list[str]) -> AnnotatedResult:
     """Wrap the CliRunner"""
+    os.environ["CIMD_CONSOLE_WIDTH"] = "160"  # fix width e.g. for tables (needed since headless)
     t_start = time.time()
     result = CLI_RUNNER.invoke(cli, command)
     t_end = time.time()
