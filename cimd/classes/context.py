@@ -2,11 +2,14 @@
 
 import json
 from datetime import UTC, datetime
+from os import getenv
 from pathlib import Path
 
 import click
 from click import UsageError
-from tabulate import tabulate
+from rich import box
+from rich.console import Console
+from rich.table import Table
 
 from cimd.classes.metadata import File, Item
 
@@ -18,6 +21,10 @@ class ApplicationContext:
         self.debug = debug
         self.filename = Path(filename)
         self.file: File = self.load_file()
+        self.console = Console()
+        console_width = getenv("CIMD_CONSOLE_WIDTH", None)
+        if console_width is not None:
+            self.console.width = int(console_width)
 
     def echo_debug(self, message: str) -> None:
         """Output a debug message if --debug is enabled."""
@@ -32,21 +39,23 @@ class ApplicationContext:
         click.secho(message, nl=nl, fg=fg)
 
     def echo_info_table(
-        self, table: list, headers: list[str], sort_column: int | None = None
+        self, rows: list, headers: list[str], sort_column: int | None = None
     ) -> None:
         """Output a formatted and highlighted table as info message."""
-        # generate the un-colored table output
+        table = Table(
+            box=box.HEAVY,
+            row_styles=["bold", ""],
+            header_style="Yellow",
+            border_style="Yellow",
+            show_lines=True,
+        )
+        for header in headers:
+            table.add_column(header)
         if sort_column is not None:
-            table = sorted(table, key=lambda k: k[sort_column].lower())
-        lines = tabulate(table, headers).splitlines()
-        # First two lines are header, output colored
-        header = "\n".join(lines[:2])
-        self.echo_info(header, fg="yellow")
-        # after the second line, the body starts
-        row_count = len(lines[2:])
-        if row_count > 0:
-            body = "\n".join(lines[2:])
-            self.echo_info(body)
+            rows = sorted(rows, key=lambda k: k[sort_column].lower())
+        for row in rows:
+            table.add_row(*row)
+        self.console.print(table)
 
     def load_file(self) -> File:
         """Load metadata from path"""
